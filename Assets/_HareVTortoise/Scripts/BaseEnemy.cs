@@ -11,9 +11,14 @@ public class BaseEnemy : MonoBehaviour
 	[SerializeField, Tooltip("Spline container object containing the path the enemy will follow in the map.")]
 	public SplineContainer EnemyPath;
 
-	[SerializeField, Tooltip("Movement speed of the enemy in units per second.")]
+	[SerializeField,Range(10.0f,120.0f), Tooltip("Movement speed of the enemy in units per second.")]
 	public float MoveSpeed = 10.0f;
 
+	[SerializeField,Range(10.0f,100.0f),Tooltip("Health of the Enemy Unit")]
+	public float Health = 10.0f;
+
+	[SerializeField, Range(10.0f, 50.0f), Tooltip("Height and Width of the Enemy Unit")]
+	public float Footprint = (10.0f);
 	#endregion
 
 	#region Member Declarations
