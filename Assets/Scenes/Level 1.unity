@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 109811663}
   - component: {fileID: 109811662}
   m_Layer: 0
-  m_Name: Spline
+  m_Name: Enemy Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
