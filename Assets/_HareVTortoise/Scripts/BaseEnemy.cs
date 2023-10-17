@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -23,14 +24,13 @@ public class BaseEnemy : MonoBehaviour
 
 	#region Member Declarations
 
-	[Header("Debug Values")]
-	[SerializeField]
+	[SerializeField, ReadOnly, Foldout("Debug")]
 	private float progress = 0.0f;
-	[SerializeField]
+	[SerializeField, ReadOnly, Foldout("Debug")]
 	private float3 position;
-	[SerializeField]
+	[SerializeField, ReadOnly, Foldout("Debug")]
 	private float3 tangent;
-	[SerializeField]
+	[SerializeField, ReadOnly, Foldout("Debug")]
 	private float3 upVector;
 
 	#endregion
