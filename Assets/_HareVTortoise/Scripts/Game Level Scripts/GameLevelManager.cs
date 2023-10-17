@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameLevelManager : MonoBehaviour
+public class GameLevelManager : MonoBehaviour, IPausable
 {
 	#region Type Definitions
 
@@ -41,25 +41,25 @@ public class GameLevelManager : MonoBehaviour
 	[SerializeField, Tooltip("Intermission timer.")]
 	private float intermissionTimer = 0.0f;
 
-	[SerializeField, Tooltip("Current game state.")]
+	[Tooltip("Current game state.")]
 	private GameState currentGameState = GameState.WarmUp;
 
-	[SerializeField, Tooltip("Whether the game is paused.")]
+	[Tooltip("Whether the game is paused.")]
 	private bool isPaused = false;
 
 	[Header("Events")]
 
 	[SerializeField, Tooltip("Invoked when the lives value changes.")]
-	public UnityEvent<int> onLivesChanged = new UnityEvent<int>();
+	public UnityEvent<int> OnLivesChanged = new UnityEvent<int>();
 
 	[SerializeField, Tooltip("Invoked when the current wave changes.")]
-	public UnityEvent<int> onCurrentWaveChanged = new UnityEvent<int>();
+	public UnityEvent<int> OnCurrentWaveChanged = new UnityEvent<int>();
 
 	[SerializeField, Tooltip("Invoked when the game state changes.")]
-	public UnityEvent<GameState> onGameStateChanged = new UnityEvent<GameState>();
+	public UnityEvent<GameState> OnGameStateChanged = new UnityEvent<GameState>();
 
 	[SerializeField, Tooltip("Invoked when the game is paused/unpaused.")]
-	public UnityEvent<bool> onPauseStateChanged = new UnityEvent<bool>();
+	public UnityEvent<bool> OnPauseStateChanged = new UnityEvent<bool>();
 
 	#endregion
 
@@ -70,7 +70,7 @@ public class GameLevelManager : MonoBehaviour
 		get { return lives; }
 		set {
 			lives = value;
-			onLivesChanged.Invoke(value);
+			OnLivesChanged.Invoke(value);
 		}
 	}
 	public int CurrentWave
@@ -78,7 +78,7 @@ public class GameLevelManager : MonoBehaviour
 		get { return currentWave; }
 		set {
 			currentWave = value;
-			onCurrentWaveChanged.Invoke(value);
+			OnCurrentWaveChanged.Invoke(value);
 		}
 	}
 	public float WarmUpTimer { get { return warmUpTimer; } private set { warmUpTimer = value; } }
@@ -88,7 +88,7 @@ public class GameLevelManager : MonoBehaviour
 		private set
 		{
 			currentGameState = value;
-			onGameStateChanged.Invoke(value);
+			OnGameStateChanged.Invoke(value);
 		}
 	}
 	public bool IsPaused {
@@ -96,7 +96,7 @@ public class GameLevelManager : MonoBehaviour
 		set 
 		{
 			isPaused = value;
-			onPauseStateChanged.Invoke(value);
+			OnPauseStateChanged.Invoke(value);
 		}
 	}
 
