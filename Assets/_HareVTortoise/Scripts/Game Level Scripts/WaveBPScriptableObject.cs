@@ -1,4 +1,3 @@
-using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +8,10 @@ public class WaveBPScriptableObject : ScriptableObject
 	#region Serializables
 
 	[SerializeField, Tooltip("Description of this wave blueprint."), TextArea(2, 4)]
-    public string Description = "";
+	public string Description = "";
 
-    [SerializeField, Tooltip("Wave sequence.")]
-    public List<WaveBPItem> WaveSequence = new List<WaveBPItem>();
+	[SerializeField, Tooltip("Wave sequence.")]
+	public List<WaveBPItem> WaveSequence = new List<WaveBPItem>();
 
 	#endregion
 

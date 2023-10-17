@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameLevelManager : MonoBehaviour, IPausable
 {
@@ -93,6 +92,12 @@ public class GameLevelManager : MonoBehaviour, IPausable
 		Lives = Lives;
 		CurrentGameState = CurrentGameState;
 	}
+
+	#endregion
+
+	#region Helper Functions
+
+
 
 	#endregion
 }
