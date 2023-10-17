@@ -47,17 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e62afad7191182447a31819487fb817b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 100
-  currentWave: 0
-  CurrentWaveTimer: 0
+  lives: 10
   warmUpDuration: 15
   warmUpTimer: 0
   intermissionDuration: 15
   intermissionTimer: 0
   OnLivesChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnCurrentWaveChanged:
     m_PersistentCalls:
       m_Calls: []
   OnGameStateChanged:
@@ -94,6 +89,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveBP: {fileID: 11400000, guid: 60acf66dc904c3c4abd2d924bb1db383, type: 2}
   isPaused: 0
+  currentWave: 0
+  OnCurrentWaveChanged:
+    m_PersistentCalls:
+      m_Calls: []
   EnemyManager: {fileID: 3508075735651787384}
 --- !u!1 &8877816734193227956
 GameObject:

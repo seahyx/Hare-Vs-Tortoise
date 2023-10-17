@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5267750257809475709}
   - component: {fileID: 3588200697716887571}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6395319436543106869}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 26931281
   m_SortingLayer: 2
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4c1df0a85f3300144accb5e0a8b8e83f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6395319436543106869}
   - component: {fileID: 9153280730264138471}
-  - component: {fileID: 5407706116115938290}
   - component: {fileID: 1267427175626808831}
   - component: {fileID: -7377966335655937597}
   m_Layer: 0
@@ -113,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 5552743078856749590}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.122, y: 1.656, z: -0.024026673}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -149,21 +148,6 @@ MonoBehaviour:
     x: 0
     y: 0
     z: 0
---- !u!114 &5407706116115938290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5552743078856749590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122b5e9205fc5a247b96f3d58450dff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onDieEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!50 &1267427175626808831
 Rigidbody2D:
   serializedVersion: 4

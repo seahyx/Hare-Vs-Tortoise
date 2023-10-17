@@ -1,12 +1,22 @@
 using NaughtyAttributes;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Splines;
 
 public class BaseEnemy : MonoBehaviour
 {
+	#region Type Definitions
+
+	public enum DeathReason
+	{
+		ReachGoal,
+		KilledByRabbit,
+		SelfHarm
+	}
+
+	#endregion
+
 	#region Serializables
 
 	[SerializeField, Tooltip("Spline container object containing the path the enemy will follow in the map.")]
@@ -19,7 +29,14 @@ public class BaseEnemy : MonoBehaviour
 	public float Health = 10.0f;
 
 	[SerializeField, Range(10.0f, 50.0f), Tooltip("Height and Width of the Enemy Unit")]
-	public float Footprint = (10.0f);
+	public float Footprint = 10.0f;
+
+	[Header("Events")]
+
+	[SerializeField, Tooltip("Invoked when this enemy is destroyed. Passes itself and death reason as parameters.")]
+	public UnityEvent<BaseEnemy, DeathReason> OnDestroyedEvent = new UnityEvent<BaseEnemy, DeathReason>();
+
+
 	#endregion
 
 	#region Member Declarations
@@ -37,15 +54,6 @@ public class BaseEnemy : MonoBehaviour
 
 	#region Monobehaviour
 
-	protected void OnEnable()
-	{
-		//if (EnemyPath == null)
-		//{
-		//	Debug.LogWarning($"Enemy does not have an enemyPath spline assigned.");
-		//	gameObject.SetActive(false);
-		//}
-	}
-
 	protected void Update()
 	{
 		// Get current position, facing rotation, and up vector (comes with the package)
@@ -54,14 +62,14 @@ public class BaseEnemy : MonoBehaviour
 
 		// Set position and rotations
 		transform.position = position;
-		transform.rotation = Quaternion.LookRotation(Vector3.forward, tangent);
+		transform.rotation = Quaternion.LookRotation(Vector3.forward, -tangent);
 
 		// Move forwards
 		progress += MoveSpeed / EnemyPath.CalculateLength() * Time.deltaTime;
 		if (progress > 1.0f)
 		{
 			// Kill thyself once reach end!!!
-			Destroy(gameObject);
+			DestroyWithReason(DeathReason.ReachGoal);
 		}
 
 		// Debug
@@ -71,6 +79,12 @@ public class BaseEnemy : MonoBehaviour
 	#endregion
 
 	#region Helper Functions
+
+	public void DestroyWithReason(DeathReason reason)
+	{
+		OnDestroyedEvent.Invoke(this, reason);
+		Destroy(gameObject);
+	}
 
 	#endregion
 

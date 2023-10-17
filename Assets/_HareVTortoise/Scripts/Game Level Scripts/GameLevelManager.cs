@@ -21,13 +21,7 @@ public class GameLevelManager : MonoBehaviour, IPausable
 	#region Serializables
 
 	[SerializeField, Tooltip("Number of lives the player has.")]
-	private int lives = 100;
-
-	[SerializeField, Tooltip("Current wave number.")]
-	private int currentWave = 0;
-
-	[SerializeField, Tooltip("Current wave timer.")]
-	public float CurrentWaveTimer = 0.0f;
+	private int lives = 10;
 
 	[SerializeField, Tooltip("Warm up duration.")]
 	private float warmUpDuration = 15.0f;
@@ -52,9 +46,6 @@ public class GameLevelManager : MonoBehaviour, IPausable
 	[SerializeField, Tooltip("Invoked when the lives value changes.")]
 	public UnityEvent<int> OnLivesChanged = new UnityEvent<int>();
 
-	[SerializeField, Tooltip("Invoked when the current wave changes.")]
-	public UnityEvent<int> OnCurrentWaveChanged = new UnityEvent<int>();
-
 	[SerializeField, Tooltip("Invoked when the game state changes.")]
 	public UnityEvent<GameState> OnGameStateChanged = new UnityEvent<GameState>();
 
@@ -71,14 +62,6 @@ public class GameLevelManager : MonoBehaviour, IPausable
 		set {
 			lives = value;
 			OnLivesChanged.Invoke(value);
-		}
-	}
-	public int CurrentWave
-	{
-		get { return currentWave; }
-		set {
-			currentWave = value;
-			OnCurrentWaveChanged.Invoke(value);
 		}
 	}
 	public float WarmUpTimer { get { return warmUpTimer; } private set { warmUpTimer = value; } }
@@ -108,7 +91,6 @@ public class GameLevelManager : MonoBehaviour, IPausable
 	{
 		// Invoke the initial game state events
 		Lives = Lives;
-		CurrentWave = CurrentWave;
 		CurrentGameState = CurrentGameState;
 	}
 

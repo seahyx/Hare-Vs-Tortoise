@@ -14,103 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: 
   WaveSequence:
-  - name: Spawn 1 x Enemy
+  - name: 'Spawn 3 x Enemy - pre: 0s/pos: 8s/spw: 3s'
     Type: 0
     PreDelay: 0
-    PostDelay: 3
+    PostDelay: 8
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 1
-    SpawnDelay: 0
+    NumberOfEnemies: 3
+    SpawnDelay: 3
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
-  - name: Spawn 5 x Enemy
+  - name: 'Spawn 5 x Enemy - pre: 0s/pos: 8s/spw: 3s'
     Type: 0
     PreDelay: 0
-    PostDelay: 3
+    PostDelay: 8
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
     NumberOfEnemies: 5
-    SpawnDelay: 0.1
+    SpawnDelay: 3
     DoNotWaitForSpawn: 0
     Delay: 0
-    WaveBP: {fileID: 11400000}
-  - name: Spawn 5 x Enemy
+    WaveBP: {fileID: 0}
+  - name: 'Spawn 8 x Enemy - pre: 0s/pos: 8s/spw: 2s'
     Type: 0
     PreDelay: 0
-    PostDelay: 0.8
+    PostDelay: 8
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 5
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 1
-    Delay: 0
-    WaveBP: {fileID: 11400000}
-  - name: Spawn 5 x Enemy
-    Type: 0
-    PreDelay: 0
-    PostDelay: 3
-    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 5
-    SpawnDelay: 1
+    NumberOfEnemies: 8
+    SpawnDelay: 2
     DoNotWaitForSpawn: 0
     Delay: 0
-    WaveBP: {fileID: 11400000}
-  - name: Spawn 1 x Enemy
-    Type: 0
-    PreDelay: 0
-    PostDelay: 0
-    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 1
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 0
-    Delay: 0
-    WaveBP: {fileID: 11400000}
-  - name: Spawn 1 x Enemy
-    Type: 1
-    PreDelay: 0
-    PostDelay: 0
-    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 1
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 0
-    Delay: 5
-    WaveBP: {fileID: 11400000}
-  - name: 'Exec BP: 5 x Basic Enemy Quick Delayed'
-    Type: 2
-    PreDelay: 0
-    PostDelay: 0
-    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 1
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 0
-    Delay: 5
-    WaveBP: {fileID: 11400000, guid: 4bc285eaa03c1704881e546858ac4ac6, type: 2}
-  - name: 'Exec BP: 5 x Basic Enemy Slow Delayed'
-    Type: 2
-    PreDelay: 0
-    PostDelay: 0
-    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 1
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 0
-    Delay: 5
-    WaveBP: {fileID: 11400000, guid: 574dae36a68b0384ba5d01cb55cca768, type: 2}
-  - name: 'Exec BP: 5 x Basic Enemy Quick No Delay'
-    Type: 2
-    PreDelay: 0
-    PostDelay: 0
-    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 1
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 0
-    Delay: 5
-    WaveBP: {fileID: 11400000, guid: bb45b49fee78d1349968645acce657cf, type: 2}
-  - name: 'Exec BP: 5 x Basic Enemy Slow No Delay'
-    Type: 2
-    PreDelay: 0
-    PostDelay: 0
-    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 1
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 0
-    Delay: 5
-    WaveBP: {fileID: 11400000, guid: ec4c43799d058604e80bbe0afe335639, type: 2}
+    WaveBP: {fileID: 0}
