@@ -10,27 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4900bed27b44d54ca8a58262adfed1f, type: 3}
-  m_Name: Wave Blueprint
+  m_Name: 5 x Basic Enemy Slow Delayed
   m_EditorClassIdentifier: 
   Description: 
   WaveSequence:
-  - name: Spawn 1x???
+  - name: Spawn 5xEnemy
     Type: 0
     PreDelay: 0
-    PostDelay: 0
-    EnemyPrefab: {fileID: 0}
-    NumberOfEnemies: 1
-    SpawnDelay: 0
+    PostDelay: 3
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 5
+    SpawnDelay: 3
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
-  - name: Spawn 1x???
-    Type: 0
-    PreDelay: 0
-    PostDelay: 0
-    EnemyPrefab: {fileID: 0}
-    NumberOfEnemies: 1
-    SpawnDelay: 0
-    DoNotWaitForSpawn: 0
-    Delay: 0
-    WaveBP: {fileID: 11400000}

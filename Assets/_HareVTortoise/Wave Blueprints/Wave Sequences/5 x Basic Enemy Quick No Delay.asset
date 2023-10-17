@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4900bed27b44d54ca8a58262adfed1f, type: 3}
+  m_Name: 5 x Basic Enemy Quick No Delay
+  m_EditorClassIdentifier: 
+  Description: 
+  WaveSequence:
+  - name: Spawn 5xEnemy
+    Type: 0
+    PreDelay: 0
+    PostDelay: 1
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 5
+    SpawnDelay: 1
+    DoNotWaitForSpawn: 1
+    Delay: 0
+    WaveBP: {fileID: 0}

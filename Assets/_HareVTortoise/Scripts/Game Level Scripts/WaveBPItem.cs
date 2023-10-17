@@ -96,7 +96,10 @@ public class WaveBPItem : ISerializationCallbackReceiver
 		switch (Type)
 		{
 			case ItemType.SpawnEnemy:
-				name = $"Spawn {NumberOfEnemies}x{EnemyPrefab?.name ?? "???"}";
+				name = $"Spawn {NumberOfEnemies} x {EnemyPrefab?.name ?? "???"} - pre: {PreDelay}s/pos: {PostDelay}s/spw: {SpawnDelay}s{(DoNotWaitForSpawn ? "/No Wait" : "")}";
+				break;
+			case ItemType.Delay:
+				name = $"Delay {Delay}s";
 				break;
 			case ItemType.WaveBP:
 				name = $"Exec BP: {WaveBP?.name ?? "???"}";
@@ -112,6 +115,7 @@ public class WaveBPItem : ISerializationCallbackReceiver
 
 	public IEnumerator Execute(WaveManager waveManager)
 	{
+		Debug.Log($"Executing wave: {name}");
 		switch (Type)
 		{
 			case ItemType.SpawnEnemy:

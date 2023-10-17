@@ -39,11 +39,11 @@ public class BaseEnemy : MonoBehaviour
 
 	protected void OnEnable()
 	{
-		if (EnemyPath == null)
-		{
-			Debug.LogError($"Enemy does not have an enemyPath spline assigned.");
-			gameObject.SetActive(false);
-		}
+		//if (EnemyPath == null)
+		//{
+		//	Debug.LogWarning($"Enemy does not have an enemyPath spline assigned.");
+		//	gameObject.SetActive(false);
+		//}
 	}
 
 	protected void Update()
@@ -58,7 +58,11 @@ public class BaseEnemy : MonoBehaviour
 
 		// Move forwards
 		progress += MoveSpeed / EnemyPath.CalculateLength() * Time.deltaTime;
-		if (progress > 1.0f) progress = 0.0f;
+		if (progress > 1.0f)
+		{
+			// Kill thyself once reach end!!!
+			Destroy(gameObject);
+		}
 
 		// Debug
 		Debug.DrawRay(transform.position, tangent, Color.red);

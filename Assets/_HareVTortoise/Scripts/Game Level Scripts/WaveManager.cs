@@ -36,4 +36,16 @@ public class WaveManager : MonoBehaviour, IPausable
 	}
 
 	#endregion
+
+	[Button]
+	public void StartWave()
+	{
+		StartCoroutine(WaveBP.Execute(this));
+	}
+
+	[Button]
+	public void EndWaves()
+	{
+		StopAllCoroutines();
+	}
 }
