@@ -26,11 +26,15 @@ public class BaseTower : MonoBehaviour
     [SerializeField, Tooltip("Height and width of tower in px")]
     public float Footprint = 20.0f;
 
+    [SerializeField, Tooltip("Bullet prefab.")]
+    public Bullet BulletPrefab;
+
     #endregion
 
     public static float pixelsPerUnit { get; private set; } = 100.0f;
     private float lastAttackTime;
     private Transform target;
+
 
     protected void OnEnable()
     {
@@ -55,14 +59,17 @@ public class BaseTower : MonoBehaviour
         if (target != null && Time.time - lastAttackTime >= FireRate)
         {
             // Create and launch a projectile toward the target.
-            //LaunchProjectile(target);
+            LaunchProjectile(10.0f, Damage, Range, Vector2.zero);
 
             // Reset the attack timer.
             lastAttackTime = Time.time;
         }
     }
 
-    private void LaunchProjectile()
+    private void LaunchProjectile(float speed, float damage, float range, Vector2 direction)
     {
+        Bullet bullet = Instantiate(BulletPrefab, transform.position, transform.rotation);
+        bullet.speed = speed;
+        bullet.range = range;
     }
 }

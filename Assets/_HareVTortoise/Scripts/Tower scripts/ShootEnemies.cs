@@ -13,6 +13,7 @@ public class ShootEnemies : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Something entered trigger");
         if (other.gameObject.tag.Equals("Enemy"))
         {
             enemiesInRange.Add(other.gameObject);
@@ -24,6 +25,7 @@ public class ShootEnemies : MonoBehaviour
   
     void OnTriggerExit2D(Collider2D other)
     {
+        Debug.Log("Something exited trigger");
         if (other.gameObject.tag.Equals("Enemy"))
         {
             enemiesInRange.Remove(other.gameObject);
