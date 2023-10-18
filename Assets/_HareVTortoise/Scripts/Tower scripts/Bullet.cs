@@ -1,93 +1,76 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float radius = 1f; // Collision radius.
-    float radiusSq; // Radius squared; optimisation.
-    Transform target; // Who we are homing at.
+	#region Serializables
 
-    void OnEnable()
-    {
-        // Pre-compute the value. 
-        radiusSq = radius * radius;
-    }
+	[SerializeField, Range(10.0f, 100.0f), Tooltip("Speed of bullet travel")]
+	public float Speed = 10.0f;
+	[SerializeField, Range(0.0f, 100.0f), Tooltip("Damage of bullet")]
+	public float Damage = 10.0f;
+	[SerializeField, Range(0.0f, 100.0f), Tooltip("Range of Attack")]
+	public float Range = 10.0f;
+	[SerializeField ,Range(0.0f, 10.0f), Tooltip("How long will the bullet last for if it does not hit target")]
+	public float Lifespan = 1.0f;
 
+	[SerializeField, Tooltip("Bullet raycast collision layer mask.")]
+	public LayerMask CollisionLayerMask = 0;
 
-    #region Serializables
+	#endregion
 
-    [SerializeField, Range(10.0f, 100.0f), Tooltip("Speed of bullet travel")]
-    public float speed = 10.0f;
-    [SerializeField, Range(0.0f, 100.0f), Tooltip("Damage of bullet")]
-    public float damage = 10.0f;
-    [SerializeField, Range(0.0f, 100.0f), Tooltip("Range of Attack")]
-    public float range = 10.0f;
-    [SerializeField ,Range(0.0f, 10.0f), Tooltip("How long will the bullet last for if it does not hit target")]
-    public float bulletLifespan = 1.0f;
+	#region Member Declarations
 
-    public Vector2 direction = Vector2.zero;
+	private float startTime = 0.0f;
+	private float lifetime => Time.time - startTime;
 
-    #endregion
-    //private void Start()
-    //{
-    //    bulletLifespan = range / speed * 1.5f;
-    //}
+	private Vector3 lastPosition = Vector3.zero;
 
-    void Update()
-    {
-        // make a storage variable that remembers the previous updates direction
-        //this is to ensure that if there is no target and the bullet has no original trajectory it will be destroyed
-        if (!target && direction == Vector2.zero)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        if (!target && direction != Vector2.zero)
-        {
-            transform.Translate(direction.normalized * speed * Time.deltaTime);
-            return;
-        }
-        //Move Bullet towards target at every frame
-        //calculate the direction vector between the tower and the enemy at every frame
-        direction = (Vector2)transform.position - (Vector2)target.position;
-        //the bullet position is adjusted
-        transform.Translate(direction.normalized * speed * Time.deltaTime);
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+	#endregion
 
+	#region Monobehaviour
 
-        //Destroy the bullets if too close too the target
-        if (direction.sqrMagnitude < radiusSq)
-        {
-            Destroy(gameObject);
-            //splat code add here
-            //deal damage code add here
-        }
+	private void Start()
+	{
+		startTime = Time.time;
+		lastPosition = transform.position;
+	}
 
-        //if (Time.deltaTime < bulletLifespan) 
-        //{
-        //    transform.Translate(direction * speed * Time.deltaTime);
-        //    transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        //}
+	void Update()
+	{
+		transform.Translate(Vector3.up * Speed * Time.deltaTime);
 
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    // So that other scripts can use Projectile.Spawn to spawn a projectile.
-    public static Bullet Spawn(GameObject prefab, Vector2 position, Quaternion rotation, Transform target)
-    {
-        // Spawn a GameObject based on a prefab, and returns its Projectile component.
-        GameObject go = Instantiate(prefab, position, rotation);
-        Bullet p = go.GetComponent<Bullet>();
+		// Check collision
+		ContactFilter2D filter2D = new();
+		filter2D.layerMask = CollisionLayerMask;
+		filter2D.useLayerMask = true;
 
-        // Rightfully, we should throw an error here instead of fixing the error for the user. 
-        if (!p) p = go.AddComponent<Bullet>();
+		RaycastHit2D[] hits = new RaycastHit2D[1];
 
-        // Set the projectile's target, so that it can work.
-        p.target = target;
-        return p;
-    }
+		if (Physics2D.Linecast(lastPosition, transform.position, filter2D, hits) > 0)
+		{
+			// Has collision!
+			// Attempt to get the BaseEnemy component
+			GameObject collidedGameObj = hits[0].collider.attachedRigidbody.gameObject;
+			BaseEnemy enemy;
+			if (collidedGameObj.TryGetComponent(out enemy))
+			{
+				// Manage to hit enemy! Time to die.
+				enemy.DealDamage(Damage, "Boolet");
+				Destroy(gameObject);
+			}
+		}
+
+		if (lifetime > Lifespan)
+		{
+			Destroy(gameObject);
+		}
+	}
+
+	#endregion
+
+	public static Bullet Spawn(Bullet bulletPrefab, Vector2 position, Vector2 direction)
+	{
+		Quaternion rotation = Quaternion.LookRotation(Vector3.forward, direction);
+		return Instantiate(bulletPrefab, position, rotation);
+	}
 }

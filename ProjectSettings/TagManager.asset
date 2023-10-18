@@ -13,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy
+  - Bullet
+  - Tower
   - 
   - 
   - 
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 928771167
+    locked: 0
+  - name: Bullet
+    uniqueID: 1786918419
     locked: 0

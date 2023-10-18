@@ -41,11 +41,10 @@ public class EnemyManager : MonoBehaviour
 		// Calculate initial starting position
 		float3 position, tangent, upVector;
 		EnemyPath.Evaluate(0, out position, out tangent, out upVector);
-		Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -tangent);
+		Quaternion rotation = Quaternion.LookRotation(Vector3.forward, tangent);
 
 		// Instantiate enemy object
-		BaseEnemy enemy = Instantiate(enemyPrefab, position, rotation);
-		enemy.EnemyPath = EnemyPath;
+		BaseEnemy enemy = BaseEnemy.Spawn(enemyPrefab, (Vector3)position, rotation, EnemyPath);
 		enemy.OnDestroyedEvent.AddListener((enemy, reason) =>
 		{
 			CurrentEnemies.Remove(enemy);

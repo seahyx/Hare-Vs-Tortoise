@@ -14,33 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: 
   WaveSequence:
-  - name: 'Spawn 3 x Enemy - pre: 0s/pos: 8s/spw: 3s'
+  - name: 'Spawn 3 x Enemy - pre: 0s/pos: 5s/spw: 3s'
     Type: 0
     PreDelay: 0
-    PostDelay: 8
+    PostDelay: 5
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
     NumberOfEnemies: 3
     SpawnDelay: 3
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
-  - name: 'Spawn 5 x Enemy - pre: 0s/pos: 8s/spw: 3s'
+  - name: 'Spawn 5 x Enemy - pre: 0s/pos: 5s/spw: 2s'
     Type: 0
     PreDelay: 0
-    PostDelay: 8
+    PostDelay: 5
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
     NumberOfEnemies: 5
-    SpawnDelay: 3
+    SpawnDelay: 2
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
-  - name: 'Spawn 8 x Enemy - pre: 0s/pos: 8s/spw: 2s'
+  - name: 'Spawn 8 x Enemy - pre: 0s/pos: 5s/spw: 1s'
     Type: 0
     PreDelay: 0
-    PostDelay: 8
+    PostDelay: 5
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
     NumberOfEnemies: 8
-    SpawnDelay: 2
+    SpawnDelay: 1
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
