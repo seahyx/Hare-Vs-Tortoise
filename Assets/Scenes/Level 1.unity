@@ -1024,10 +1024,6 @@ PrefabInstance:
       propertyPath: _text
       value: Begin Wave
       objectReference: {fileID: 0}
-    - target: {fileID: 7688532567408953091, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
-      propertyPath: _fontSize
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1498,7 +1494,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1707372106088866032, guid: 5c92d733c33b56d47838b0beca251cc8, type: 3}
       propertyPath: m_text
-      value: 1/10
+      value: '1
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 1707372106088866032, guid: 5c92d733c33b56d47838b0beca251cc8, type: 3}
       propertyPath: m_fontSize
@@ -1602,7 +1600,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4724597247423378610, guid: 5c92d733c33b56d47838b0beca251cc8, type: 3}
       propertyPath: m_text
-      value: 1/10
+      value: '1
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4724597247423378610, guid: 5c92d733c33b56d47838b0beca251cc8, type: 3}
       propertyPath: m_fontSize

@@ -11,6 +11,9 @@ public class TowerPreview : MonoBehaviour
 	public Transform RangeTransform;
 
 	[SerializeField]
+	public BodyTriggerHandler triggerHandler;
+
+	[SerializeField]
 	public Color ValidPlacementColor = new Color(1, 1, 1, 0.75f);
 
 	[SerializeField]
@@ -55,12 +58,22 @@ public class TowerPreview : MonoBehaviour
 				TowerSprite.color = InvalidPlacementColor;
 				break;
 			case TowerPlacementManager.FinalPlacementState.Valid:
-				IsValidPosition = true;
-				TowerSprite.color = ValidPlacementColor;
+				if (!triggerHandler.IsOverlapping)
+				{
+					IsValidPosition = true;
+					TowerSprite.color = ValidPlacementColor;
+				}
+				else
+				{
+					TowerSprite.color = ObstaclePlacementColor;
+				}
 				break;
 			case TowerPlacementManager.FinalPlacementState.Invalid:
 				TowerSprite.color = ObstaclePlacementColor;
 				break;
 		}
 	}
+
+
+	
 }

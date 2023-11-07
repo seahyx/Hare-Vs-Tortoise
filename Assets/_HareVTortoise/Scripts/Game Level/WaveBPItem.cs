@@ -151,7 +151,7 @@ public class WaveBPItem : ISerializationCallbackReceiver
 				name = $"Spawn card: {CardData?.CardName ?? "???"} - pre: {CardPreDelay}s/pos: {CardPostDelay}";
 				break;
 			case ItemType.WaveEnd:
-				name = $"End of wave{( IsEndlessWave ? "" : " " + currentWaveNumber)} - delay: {WaveEndDelay}s";
+				name = $"End of wave{( IsEndlessWave ? "" : " " + (currentWaveNumber + 1))} - delay: {WaveEndDelay}s";
 				break;
 		}
 	}

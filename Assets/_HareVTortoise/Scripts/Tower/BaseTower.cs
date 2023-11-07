@@ -36,7 +36,7 @@ public class BaseTower : MonoBehaviour
 	public SpriteRenderer TowerSprite;
 
 	[SerializeField]
-	public Transform RangeTransform;
+	public Transform RangeSpriteTransform;
 
 	[SerializeField]
 	public TowerRangeTriggerHandler RangeTriggerHandler;
@@ -160,14 +160,14 @@ public class BaseTower : MonoBehaviour
 			RangeTriggerHandler.UpdateRange(RangeUnityUnit);
 		}
 
-		if (RangeTransform == null) return;
-		RangeTransform.localScale = new Vector3(RangeUnityUnit * 2, RangeUnityUnit * 2, 1);
+		if (RangeSpriteTransform == null) return;
+		RangeSpriteTransform.localScale = new Vector3(RangeUnityUnit * 2, RangeUnityUnit * 2, 1);
 	}
 
 	private void ShowRange(bool show)
 	{
 		UpdateRange();
-		RangeTransform.gameObject.SetActive(show);
+		RangeSpriteTransform.gameObject.SetActive(show);
 	}
 
 	#endregion
