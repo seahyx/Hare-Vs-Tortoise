@@ -9,23 +9,41 @@ public class CardManager : MonoBehaviour
 	[SerializeField]
 	public List<CardBanner> banners = new List<CardBanner>();
 
-	[SerializeField]
-	public List<Card> cards = new List<Card>();
-
 	#endregion
 
 	#region Member Declarations
 
-	private TowerPlacementManager towerPlacementManager;
+	public TowerPlacementManager towerPlacementManager;
 
 	#endregion
 
 	#region Monobehaviour
 
-	private void Start()
+	private void Awake()
 	{
 		towerPlacementManager = GetComponent<TowerPlacementManager>();
 	}
 
 	#endregion
+
+	public void SpawnCard(CardDataScriptableObject cardData)
+	{
+
+	}
+
+	public void ActivateCard(CardBanner cardBanner)
+	{
+
+	}
+
+	public void DeactivateCard(CardBanner cardBanner)
+	{
+		
+	}
+
+	public void ConsumeCard(CardBanner cardBanner)
+	{
+		if (cardBanner == null) return;
+		banners.Remove(cardBanner);
+	}
 }

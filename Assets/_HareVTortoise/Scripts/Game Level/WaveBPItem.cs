@@ -11,7 +11,9 @@ public class WaveBPItem : ISerializationCallbackReceiver
 	{
 		SpawnEnemy,
 		Delay,
-		WaveBP
+		WaveBP,
+		SpawnCard
+
 	}
 
 	#endregion
@@ -23,7 +25,9 @@ public class WaveBPItem : ISerializationCallbackReceiver
 
 	[SerializeField, Tooltip("Determines the function of this wave item.\n" +
 		"SpawnEnemy - Spawns enemy prefabs with pre/post-delay.\n" +
-		"WaveBP - Loads in another wave blueprint in this slot.")]
+        "WaveBP - Loads in another wave blueprint in this slot.\n" +
+		"SpawnCard - Spawns card prefabs"
+        )]
 	public ItemType Type;
 
 	#region Type = SpawnEnemy
@@ -85,13 +89,34 @@ public class WaveBPItem : ISerializationCallbackReceiver
 	[AllowNesting]
 	public WaveBPScriptableObject WaveBP;
 
-	#endregion
+    #endregion
 
-	#endregion
+    #region Type = SpawnCard
 
-	#region ISerializationCallbackReceiver
+    [SerializeField, Tooltip("Delay before spawning the card in seconds.")]
+    [MinValue(0)]
+    [ShowIf("Type", ItemType.SpawnCard)]
+    [AllowNesting]
+    public float CardPreDelay = 0.0f;
 
-	public void OnBeforeSerialize()
+    [SerializeField, Tooltip("Delay after spawning the card in seconds.")]
+    [ShowIf("Type", ItemType.SpawnCard)]
+    [AllowNesting]
+    public float CardPostDelay = 0.0f;
+
+    [SerializeField, Tooltip("Card data reference.")]
+    [ShowIf("Type", ItemType.SpawnCard)]
+    [AllowNesting]
+    public CardDataScriptableObject CardData;
+
+
+    #endregion
+
+    #endregion
+
+    #region ISerializationCallbackReceiver
+
+    public void OnBeforeSerialize()
 	{
 		switch (Type)
 		{
@@ -104,7 +129,10 @@ public class WaveBPItem : ISerializationCallbackReceiver
 			case ItemType.WaveBP:
 				name = $"Exec BP: {WaveBP?.name ?? "???"}";
 				break;
-		}
+            case ItemType.SpawnCard:
+                name = $"Spawn card: {CardData?.CardName ?? "???"} - pre: {CardPreDelay}s/pos: {CardPostDelay}";
+                break;
+        }
 	}
 
 	public void OnAfterDeserialize() { }
@@ -129,7 +157,11 @@ public class WaveBPItem : ISerializationCallbackReceiver
 			case ItemType.WaveBP:
 				yield return waveManager.StartCoroutine(WaveBP.Execute(waveManager));
 				break;
-		}
+
+            case ItemType.SpawnCard:
+                yield return waveManager.StartCoroutine(SpawnCardCoroutine(waveManager));
+                break;
+        }
 	}
 
 	public IEnumerator SpawnEnemyCoroutine(WaveManager waveManager)
@@ -164,6 +196,16 @@ public class WaveBPItem : ISerializationCallbackReceiver
 			enemiesLeft--;
 		}
 	}
+    public IEnumerator SpawnCardCoroutine(WaveManager waveManager)
+    {
+        // Pre-delay
+        yield return new WaitWhileUnpaused(CardPreDelay, waveManager);
 
-	#endregion
+		// Card spawn 
+		waveManager.CardManager.SpawnCard(CardData);
+
+        // Post-delay
+        yield return new WaitWhileUnpaused(PostDelay, waveManager);
+    }
+    #endregion
 }

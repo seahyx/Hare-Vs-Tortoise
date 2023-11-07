@@ -26,6 +26,9 @@ public class BaseTower : MonoBehaviour
 	[SerializeField, Tooltip("Height and width of tower in px.")]
 	public float Footprint = 20.0f;
 
+	[SerializeField, Tooltip("Surfaces that this tower can be built on.")]
+	public TowerPlacementManager.Surfaces PlaceableSurfaces = TowerPlacementManager.Surfaces.Land;
+
 	[SerializeField, Tooltip("Bullet prefab.")]
 	public Bullet BulletPrefab;
 

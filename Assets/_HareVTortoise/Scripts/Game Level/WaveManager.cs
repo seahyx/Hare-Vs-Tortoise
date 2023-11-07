@@ -45,6 +45,9 @@ public class WaveManager : MonoBehaviour, IPausable
 	[HideInInspector]
 	public EnemyManager EnemyManager;
 
+	[HideInInspector]
+	public CardManager CardManager;
+
 	#endregion
 
 	#region Monobehaviour
@@ -52,6 +55,7 @@ public class WaveManager : MonoBehaviour, IPausable
 	private void Awake()
 	{
 		EnemyManager = GetComponent<EnemyManager>();
+		CardManager = GetComponent<CardManager>();
 	}
 
 	private void Start()
