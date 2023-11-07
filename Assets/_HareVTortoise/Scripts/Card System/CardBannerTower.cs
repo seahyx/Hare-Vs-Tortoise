@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CardTowerBanner : CardBanner
+public class CardBannerTower : CardBanner
 {
 	#region Card Banner Event Overrides
 
@@ -10,7 +10,7 @@ public class CardTowerBanner : CardBanner
 
 		if (CardData is CardTowerDataScriptableObject towerData)
 		{
-			cardManager.towerPlacementManager.StartPlaceTower(towerData.Tower);
+			CardManager.towerPlacementManager.StartPlaceTower(towerData.Tower);
 		}
 		else
 		{
@@ -24,7 +24,10 @@ public class CardTowerBanner : CardBanner
 
 		if (CardData is CardTowerDataScriptableObject towerData)
 		{
-			cardManager.towerPlacementManager.FinishPlaceTower();
+			if (CardManager.towerPlacementManager.FinishPlaceTower())
+			{
+				ConsumeCard();
+			}
 		}
 		else
 		{
@@ -38,7 +41,7 @@ public class CardTowerBanner : CardBanner
 
 		if (CardData is CardTowerDataScriptableObject towerData)
 		{
-			cardManager.towerPlacementManager.CancelPlaceTower();
+			CardManager.towerPlacementManager.CancelPlaceTower();
 		}
 		else
 		{

@@ -31,7 +31,7 @@ public class LifeWavePanelController : MonoBehaviour
 		});
 		waveManager.OnCurrentWaveChanged.AddListener((currentWave, totalWaves) =>
 		{
-			waveValue.Text = $"{currentWave}/{totalWaves}";
+			waveValue.Text = $"{currentWave + 1}";
 		});
 	}
 

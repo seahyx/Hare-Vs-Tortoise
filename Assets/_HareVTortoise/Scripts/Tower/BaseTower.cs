@@ -68,11 +68,11 @@ public class BaseTower : MonoBehaviour
 	protected void Awake()
 	{
 		RangeTriggerHandler.tower = this;
-		UpdateRange();
 	}
 
 	protected void Update()
 	{
+		UpdateRange();
 		if (target != null)
 		{
 			Vector2 directionToEnemy = target.transform.position - transform.position;

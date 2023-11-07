@@ -233,6 +233,7 @@ MonoBehaviour:
   Range: 100
   ProjectileSpeed: 100
   Footprint: 20
+  PlaceableSurfaces: 2
   BulletPrefab: {fileID: 6414985595747935551, guid: 8af3431b4a078f246a4c4b6907778fdf, type: 3}
   TowerSprite: {fileID: 4900035915122567548}
   RangeTransform: {fileID: 955759565457182751}
@@ -430,3 +431,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc172724993994d48bd3f7ce0e17e303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 0}

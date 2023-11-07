@@ -137,6 +137,7 @@ MonoBehaviour:
   ValidPlacementColor: {r: 1, g: 1, b: 1, a: 0.75}
   ObstaclePlacementColor: {r: 1, g: 0, b: 0, a: 0.5}
   InvalidPlacementColor: {r: 1, g: 0, b: 0, a: 0.5}
+  IsValidPosition: 0
 --- !u!50 &5514238821924121295
 Rigidbody2D:
   serializedVersion: 4
@@ -145,7 +146,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3151286725603738565}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

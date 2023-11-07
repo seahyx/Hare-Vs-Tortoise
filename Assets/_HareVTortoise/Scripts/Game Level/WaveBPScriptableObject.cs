@@ -1,9 +1,10 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Wave Blueprint", menuName = "Hare V Tortoise/Wave Blueprint", order = 1)]
-public class WaveBPScriptableObject : ScriptableObject
+public class WaveBPScriptableObject : ScriptableObject, ISerializationCallbackReceiver
 {
 	#region Serializables
 
@@ -23,5 +24,29 @@ public class WaveBPScriptableObject : ScriptableObject
 			yield return waveManager.StartCoroutine(WaveSequence[currentWaveItemIdx].Execute(waveManager));
 			currentWaveItemIdx++;
 		}
+	}
+
+	public void OnAfterDeserialize() { }
+
+	public void OnBeforeSerialize()
+	{
+		CountTotalWaves();
+	}
+
+	public int CountTotalWaves()
+	{
+		int wave = 0;
+
+		for (int i = 0; i < WaveSequence.Count; i++)
+		{
+			WaveBPItem item = WaveSequence[i];
+			item.currentWaveNumber = wave;
+			if (item.Type == WaveBPItem.ItemType.WaveEnd) wave++;
+			if (item.Type == WaveBPItem.ItemType.WaveBP)
+			{
+				wave += item.WaveBP.CountTotalWaves();
+			}
+		}
+		return wave;
 	}
 }

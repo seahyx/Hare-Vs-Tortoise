@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1590599237570035352}
   - component: {fileID: 8588065994288724392}
-  - component: {fileID: 3508075735651787384}
   - component: {fileID: 295901338910331937}
+  - component: {fileID: 3508075735651787384}
   - component: {fileID: 2281853520376438702}
   - component: {fileID: 5681336472554985403}
   - component: {fileID: 8867880085558056552}
@@ -64,20 +64,6 @@ MonoBehaviour:
   OnPauseStateChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3508075735651787384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4211224300174501783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aa3cd60ea55663438b9a06be13cde3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyPath: {fileID: 4886320000979131475}
-  CurrentEnemies: []
 --- !u!114 &295901338910331937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +83,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   EnemyManager: {fileID: 3508075735651787384}
+  CardManager: {fileID: 0}
+--- !u!114 &3508075735651787384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211224300174501783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa3cd60ea55663438b9a06be13cde3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyPath: {fileID: 4886320000979131475}
+  CurrentEnemies: []
 --- !u!114 &2281853520376438702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,8 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d256bdfa708dda48bd23cab8186c8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCards: 4
   banners: []
-  cards: []
+  cardDisplayParent: {fileID: 0}
+  cardBannerParent: {fileID: 0}
+  cardSpawnHeightOffset: 3
+  towerPlacementManager: {fileID: 5681336472554985403}
 --- !u!114 &5681336472554985403
 MonoBehaviour:
   m_ObjectHideFlags: 0

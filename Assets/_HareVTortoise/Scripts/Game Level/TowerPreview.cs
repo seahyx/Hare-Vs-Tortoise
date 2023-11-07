@@ -52,7 +52,8 @@ public class TowerPreview : MonoBehaviour
 		switch (state)
 		{
 			default:
-				TowerSprite.color = InvalidPlacementColor; break;
+				TowerSprite.color = InvalidPlacementColor;
+				break;
 			case TowerPlacementManager.FinalPlacementState.Valid:
 				IsValidPosition = true;
 				TowerSprite.color = ValidPlacementColor;

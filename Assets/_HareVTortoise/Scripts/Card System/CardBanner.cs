@@ -11,7 +11,7 @@ public class CardBanner : MonoBehaviour
 	[SerializeField, ReadOnly, Tooltip("Card reference.")]
 	public Card Card;
 
-	[SerializeField, Expandable]
+	[SerializeField, ReadOnly, Expandable]
 	public CardDataScriptableObject CardData;
 
 	[SerializeField, Tooltip("Invoked when the card is activated.")]
@@ -36,9 +36,9 @@ public class CardBanner : MonoBehaviour
 	private EventTrigger trigger;
 
 	/// <summary>
-	/// Initialized by the <see cref="cardManager"/> that instantiated this <see cref="CardBanner"/> object, providing a reference to itself.
+	/// Initialized by the <see cref="CardManager"/> that instantiated this <see cref="CardBanner"/> object, providing a reference to itself.
 	/// </summary>
-	protected CardManager cardManager;
+	public CardManager CardManager;
 
 	#endregion
 
@@ -51,6 +51,11 @@ public class CardBanner : MonoBehaviour
 		clickEntry.eventID = EventTriggerType.PointerClick;
 		clickEntry.callback.AddListener((data) => Click());
 		trigger.triggers.Add(clickEntry);
+
+		EventTrigger.Entry deClickEntry = new EventTrigger.Entry();
+		deClickEntry.eventID = EventTriggerType.Deselect;
+		deClickEntry.callback.AddListener((data) => Deselect());
+		trigger.triggers.Add(deClickEntry);
 
 		EventTrigger.Entry beginDragEntry = new EventTrigger.Entry();
 		beginDragEntry.eventID = EventTriggerType.BeginDrag;
@@ -65,10 +70,12 @@ public class CardBanner : MonoBehaviour
 		EventTrigger.Entry beginHoverEntry = new EventTrigger.Entry();
 		beginHoverEntry.eventID = EventTriggerType.PointerEnter;
 		beginHoverEntry.callback.AddListener((data) => HoverEnter((PointerEventData)data));
+		trigger.triggers.Add(beginHoverEntry);
 
 		EventTrigger.Entry endHoverEntry = new EventTrigger.Entry();
 		endHoverEntry.eventID = EventTriggerType.PointerExit;
 		endHoverEntry.callback.AddListener((data) => HoverExit((PointerEventData)data));
+		trigger.triggers.Add(endHoverEntry);
 	}
 
 	#endregion
@@ -99,23 +106,31 @@ public class CardBanner : MonoBehaviour
 	{
 		if (IsActivated)
 		{
+			//Debug.Log("Card clicked; cancel activation.");
 			ActivateCancel();
 		}
 		else
 		{
+			//Debug.Log("Card clicked; activating.");
 			Activate();
 		}
 	}
 
+	public void Deselect()
+	{
+		//Debug.Log("Card declicked; cancel activation.");
+		ActivateRelease();
+	}
+
 	public void BeginDrag(PointerEventData eventData)
 	{
-		//Debug.Log($"Beginning drag at {eventData.position}");
+		//Debug.Log("Card dragged; activating.");
 		Activate();
 	}
 
 	public void EndDrag(PointerEventData eventData)
 	{
-		//Debug.Log($"End drag at {eventData.position}");
+		//Debug.Log("Card released; activation release.");
 		ActivateRelease();
 	}
 
@@ -141,7 +156,10 @@ public class CardBanner : MonoBehaviour
 		OnActivate();
 	}
 
-	protected virtual void OnActivate() { }
+	protected virtual void OnActivate()
+	{
+		CardManager.ActivateCard(this);
+	}
 
 	public void ActivateRelease()
 	{
@@ -151,7 +169,10 @@ public class CardBanner : MonoBehaviour
 		OnActivateRelease();
 	}
 
-	protected virtual void OnActivateRelease() { }
+	protected virtual void OnActivateRelease()
+	{
+		CardManager.DeactivateCard(this);
+	}
 
 	public void ActivateCancel()
 	{
@@ -161,7 +182,10 @@ public class CardBanner : MonoBehaviour
 		OnActivateCancel();
 	}
 
-	protected virtual void OnActivateCancel() { }
+	protected virtual void OnActivateCancel()
+	{
+		CardManager.DeactivateCard(this);
+	}
 
 	public void ConsumeCard()
 	{
@@ -172,7 +196,7 @@ public class CardBanner : MonoBehaviour
 	protected virtual void OnConsumeCard()
 	{
 		// Call the card manager for clean up
-		cardManager.ConsumeCard(this);
+		CardManager.ConsumeCard(this);
 	}
 
 	#endregion

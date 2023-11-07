@@ -75,13 +75,11 @@ public class TowerPlacementManager : MonoBehaviour
 	/// <summary>
 	/// The current tower being built.
 	/// </summary>
-	[ShowNativeProperty]
 	private BaseTower currentBuildTower { get; set; }
 
 	/// <summary>
 	/// List of all the built towers in the map.
 	/// </summary>
-	[ShowNativeProperty]
 	public List<BaseTower> towers { get; set; } = new List<BaseTower>();
 
 	#endregion
@@ -128,6 +126,7 @@ public class TowerPlacementManager : MonoBehaviour
 			return;
 		}
 		state = TowerManagerState.Placing;
+		currentBuildTower = tower;
 
 		towerPreview.gameObject.SetActive(true);
 		towerPreview.SetSprite(tower.TowerSprite.sprite);
@@ -141,7 +140,11 @@ public class TowerPlacementManager : MonoBehaviour
 	/// <returns>Whether the tower is successfully placed in the map.</returns>
 	public bool FinishPlaceTower()
 	{
-		if (!towerPreview.IsValidPosition && state != TowerManagerState.Placing) return false;
+		if (state != TowerManagerState.Placing || !towerPreview.IsValidPosition)
+		{
+			CancelPlaceTower();
+			return false;
+		}
 
 		// Valid position, instantiate tower here
 		BaseTower builtTower = Instantiate(currentBuildTower, towerPreview.transform.position, towerPreview.transform.rotation, towersContainer);
@@ -190,8 +193,8 @@ public class TowerPlacementManager : MonoBehaviour
 	private Vector2 PointerToMapUV()
 	{
 		Vector2 pointInMapCoords = Camera.main.ScreenToWorldPoint(Input.mousePosition) - mapSprite.bounds.min;
-		pointInMapCoords.x = pointInMapCoords.x / mapSprite.size.x;
-		pointInMapCoords.y = pointInMapCoords.y / mapSprite.size.y;
+		pointInMapCoords.x = pointInMapCoords.x / mapSprite.bounds.size.x;
+		pointInMapCoords.y = pointInMapCoords.y / mapSprite.bounds.size.y;
 		return pointInMapCoords;
 	}
 
@@ -227,7 +230,8 @@ public class TowerPlacementManager : MonoBehaviour
 	/// <returns></returns>
 	private FinalPlacementState GetPlacementState(BaseTower tower)
 	{
-		FinalPlacementState finalPlacementState = tower.PlaceableSurfaces.HasFlag(GetSurfaceAtPointer())
+		Surfaces surface = GetSurfaceAtPointer();
+		FinalPlacementState finalPlacementState = surface != Surfaces.Invalid && tower.PlaceableSurfaces.HasFlag(surface)
 			? FinalPlacementState.Valid : FinalPlacementState.Invalid;
 		return finalPlacementState;
 	}

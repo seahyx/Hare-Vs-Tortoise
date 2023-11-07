@@ -58,3 +58,6 @@ TagManager:
   - name: Bullet
     uniqueID: 1786918419
     locked: 0
+  - name: Card
+    uniqueID: 4039283015
+    locked: 0

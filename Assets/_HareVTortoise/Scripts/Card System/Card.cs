@@ -1,21 +1,22 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
 	#region Serializables
 
 	[SerializeField]
-	private SpriteRenderer cardImage;
+	private Image cardImage;
 
 	[SerializeField]
-	private TextMeshPro cardName;
+	private TextMeshProUGUI cardName;
 
 	[SerializeField]
-	private TextMeshPro cardDesc;
+	private TextMeshProUGUI cardDesc;
 
 	[SerializeField]
-	private CardDataScriptableObject cardData;
+	public CardDataScriptableObject CardData;
 
 	#endregion
 
@@ -24,11 +25,11 @@ public class Card : MonoBehaviour
 		UpdateCardData();
 	}
 
-	protected void UpdateCardData()
+	public virtual void UpdateCardData()
 	{
-		if (cardData == null) return;
-		cardImage.sprite = cardData.CardSprite;
-		cardName.text = cardData.CardName;
-		cardDesc.text = cardData.Description;
+		if (CardData == null) return;
+		cardImage.sprite = CardData.CardSprite;
+		cardName.text = CardData.CardName;
+		cardDesc.text = CardData.Description;
 	}
 }
