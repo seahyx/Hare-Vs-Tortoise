@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8588065994288724392}
   - component: {fileID: 3508075735651787384}
   - component: {fileID: 295901338910331937}
+  - component: {fileID: 5681336472554985403}
   - component: {fileID: 8867880085558056552}
   m_Layer: 0
   m_Name: GameManager
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa3cd60ea55663438b9a06be13cde3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPath: {fileID: 0}
+  EnemyPath: {fileID: 4886320000979131475}
   CurrentEnemies: []
 --- !u!114 &295901338910331937
 MonoBehaviour:
@@ -95,6 +96,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   EnemyManager: {fileID: 3508075735651787384}
+--- !u!114 &5681336472554985403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211224300174501783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8513678540e062c4583d9eda0a006cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placementMap: {fileID: 0}
+  mapSprite: {fileID: 0}
+  towerPreview: {fileID: 0}
 --- !u!114 &8867880085558056552
 MonoBehaviour:
   m_ObjectHideFlags: 0
