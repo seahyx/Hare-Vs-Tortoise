@@ -42,7 +42,7 @@ public class WaveBPScriptableObject : ScriptableObject, ISerializationCallbackRe
 			WaveBPItem item = WaveSequence[i];
 			item.currentWaveNumber = wave;
 			if (item.Type == WaveBPItem.ItemType.WaveEnd) wave++;
-			if (item.Type == WaveBPItem.ItemType.WaveBP)
+			if (item.Type == WaveBPItem.ItemType.WaveBP && item.WaveBP != null)
 			{
 				wave += item.WaveBP.CountTotalWaves();
 			}

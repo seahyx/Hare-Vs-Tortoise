@@ -151,7 +151,7 @@ public class WaveBPItem : ISerializationCallbackReceiver
 				name = $"Spawn card: {CardData?.CardName ?? "???"} - pre: {CardPreDelay}s/pos: {CardPostDelay}";
 				break;
 			case ItemType.WaveEnd:
-				name = $"End of wave{( IsEndlessWave ? " " + currentWaveNumber : "" )} - delay: {WaveEndDelay}s";
+				name = $"End of wave{( IsEndlessWave ? "" : " " + currentWaveNumber)} - delay: {WaveEndDelay}s";
 				break;
 		}
 	}
@@ -181,6 +181,13 @@ public class WaveBPItem : ISerializationCallbackReceiver
 
 			case ItemType.SpawnCard:
 				yield return waveManager.StartCoroutine(SpawnCardCoroutine(waveManager));
+				break;
+
+			case ItemType.WaveEnd:
+				// Wait for all enemies to die
+				while (waveManager.EnemyManager.CurrentEnemies.Count > 0) yield return null;
+				yield return new WaitWhileUnpaused(WaveEndDelay, waveManager);
+				waveManager.CurrentWave++;
 				break;
 		}
 	}

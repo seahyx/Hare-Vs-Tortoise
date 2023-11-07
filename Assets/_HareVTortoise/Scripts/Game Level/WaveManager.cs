@@ -40,7 +40,7 @@ public class WaveManager : MonoBehaviour, IPausable
 		}
 	}
 
-	public int TotalWaves { get; private set; } = 1;
+	public int TotalWaves => WaveBP?.CountTotalWaves() ?? 0;
 
 	[HideInInspector]
 	public EnemyManager EnemyManager;

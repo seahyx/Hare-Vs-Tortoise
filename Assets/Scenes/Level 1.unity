@@ -894,11 +894,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3320579178737549788, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 120
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3320579178737549788, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 36
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 3320579178737549788, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: m_LocalPosition.x
@@ -954,11 +954,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4585389593165268010, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: m_fontSize
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4585389593165268010, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: m_fontSizeBase
-      value: 16
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094944608151949454, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
+      propertyPath: m_AnimationTriggers.m_NormalTrigger
+      value: Highlighted
       objectReference: {fileID: 0}
     - target: {fileID: 6094944608151949454, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1010,11 +1014,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7602773545189412968, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: m_fontSize
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7602773545189412968, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: m_fontSizeBase
-      value: 16
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7688532567408953091, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: _text
@@ -1022,7 +1026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7688532567408953091, guid: 7b1e5441eb7e2f44fb81af7587a07967, type: 3}
       propertyPath: _fontSize
-      value: 16
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

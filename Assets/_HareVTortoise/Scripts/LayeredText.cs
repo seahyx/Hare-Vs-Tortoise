@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[ExecuteAlways]
 public class LayeredText : MonoBehaviour
 {
 

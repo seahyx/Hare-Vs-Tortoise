@@ -161,7 +161,7 @@ public class BaseTower : MonoBehaviour
 		}
 
 		if (RangeTransform == null) return;
-		RangeTransform.localScale = new Vector3(RangeUnityUnit, RangeUnityUnit, 1);
+		RangeTransform.localScale = new Vector3(RangeUnityUnit * 2, RangeUnityUnit * 2, 1);
 	}
 
 	private void ShowRange(bool show)

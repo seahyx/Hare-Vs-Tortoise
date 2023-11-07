@@ -27,10 +27,12 @@ MonoBehaviour:
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
-  - name: 'Spawn 3 x Enemy - pre: 0s/pos: 5s/spw: 3s'
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'Spawn 3 x Enemy - pre: 0s/pos: 0s/spw: 3s'
     Type: 0
     PreDelay: 0
-    PostDelay: 5
+    PostDelay: 0
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
     NumberOfEnemies: 3
     SpawnDelay: 3
@@ -40,19 +42,23 @@ MonoBehaviour:
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 0}
-  - name: 'Spawn 5 x Enemy - pre: 0s/pos: 5s/spw: 2s'
-    Type: 0
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'End of wave 0 - delay: 5s'
+    Type: 4
     PreDelay: 0
     PostDelay: 5
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 5
-    SpawnDelay: 2
+    NumberOfEnemies: 8
+    SpawnDelay: 1
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
   - name: 'Spawn card: Basic Soldier - pre: 0s/pos: 0'
     Type: 3
     PreDelay: 0
@@ -66,8 +72,25 @@ MonoBehaviour:
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
-  - name: 'Spawn 8 x Enemy - pre: 0s/pos: 5s/spw: 1s'
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'Spawn 5 x Enemy - pre: 0s/pos: 0s/spw: 2s'
     Type: 0
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 5
+    SpawnDelay: 2
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'End of wave 1 - delay: 5s'
+    Type: 4
     PreDelay: 0
     PostDelay: 5
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
@@ -79,3 +102,170 @@ MonoBehaviour:
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'Spawn 8 x Enemy - pre: 0s/pos: 0s/spw: 1s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 8
+    SpawnDelay: 1
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'Spawn card: Basic Soldier - pre: 0s/pos: 0'
+    Type: 3
+    PreDelay: 0
+    PostDelay: 5
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 8
+    SpawnDelay: 1
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'End of wave 2 - delay: 5s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 5
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 8
+    SpawnDelay: 1
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'Spawn 4 x Enemy - pre: 0s/pos: 0.75s/spw: 2s/No Wait'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 0.75
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 4
+    SpawnDelay: 2
+    DoNotWaitForSpawn: 1
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'Spawn 4 x Enemy - pre: 0s/pos: 1s/spw: 2s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 1
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 4
+    SpawnDelay: 2
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'Spawn card: Basic Soldier - pre: 0s/pos: 0'
+    Type: 3
+    PreDelay: 0
+    PostDelay: 5
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 8
+    SpawnDelay: 1
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'Spawn 4 x Enemy - pre: 0s/pos: 0s/spw: 0.2s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 4
+    SpawnDelay: 0.2
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'End of wave 3 - delay: 5s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 4
+    SpawnDelay: 0.2
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'Spawn card: Basic Soldier - pre: 0s/pos: 0'
+    Type: 3
+    PreDelay: 0
+    PostDelay: 5
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 8
+    SpawnDelay: 1
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'Spawn 16 x Enemy - pre: 0s/pos: 0s/spw: 0.5s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'End of wave 4 - delay: 5s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0

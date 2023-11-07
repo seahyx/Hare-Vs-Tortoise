@@ -39,7 +39,7 @@ public class TowerPreview : MonoBehaviour
 	/// <param name="range"></param>
 	public void SetRange(float range)
 	{
-		RangeTransform.localScale = new Vector3(range, range, 1.0f);
+		RangeTransform.localScale = new Vector3(range * 2, range * 2, 1.0f);
 	}
 
 	/// <summary>
