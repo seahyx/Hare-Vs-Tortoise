@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 564729840839881356}
   - component: {fileID: 8712162673216785241}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: BaseTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +236,7 @@ MonoBehaviour:
   PlaceableSurfaces: 2
   BulletPrefab: {fileID: 6414985595747935551, guid: 8af3431b4a078f246a4c4b6907778fdf, type: 3}
   TowerSprite: {fileID: 4900035915122567548}
-  RangeTransform: {fileID: 6002690848122473659}
+  RangeSpriteTransform: {fileID: 0}
   RangeTriggerHandler: {fileID: 5026780107893727319}
   EnemiesInRange: []
 --- !u!1 &7160661706981425939
