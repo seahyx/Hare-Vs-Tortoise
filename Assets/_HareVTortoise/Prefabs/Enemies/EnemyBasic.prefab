@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 26931281
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4c1df0a85f3300144accb5e0a8b8e83f, type: 3}
+  m_Sprite: {fileID: -1361055201, guid: 4c1df0a85f3300144accb5e0a8b8e83f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 9153280730264138471}
   - component: {fileID: 1267427175626808831}
   - component: {fileID: -7377966335655937597}
-  - component: {fileID: 4804215867978651370}
+  - component: {fileID: 1053743592962818723}
   m_Layer: 6
   m_Name: EnemyBasic
   m_TagString: Enemy
@@ -223,7 +223,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.2
---- !u!95 &4804215867978651370
+--- !u!95 &1053743592962818723
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

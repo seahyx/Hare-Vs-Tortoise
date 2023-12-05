@@ -8,10 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1053743592962818723, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 27ee84cf4b024824b9aa310bd5f2b0f6, type: 2}
     - target: {fileID: 3588200697716887571, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f646a918eefe0fe44872c9a285d64292, type: 3}
+      objectReference: {fileID: -103498279, guid: f646a918eefe0fe44872c9a285d64292, type: 3}
+    - target: {fileID: 3588200697716887571, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5552743078856749590, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
       propertyPath: m_Name
       value: EnemyTank

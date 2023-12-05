@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4c1df0a85f3300144accb5e0a8b8e83f
+guid: f646a918eefe0fe44872c9a285d64292
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Basic Tortoise_0
+      name: Steel Tortoise_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c88aa380818a336478f4c14c88b891d2
-      internalID: -1361055201
+      spriteID: 58440ef7422736545943b80bd759214b
+      internalID: -103498279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Tortoise_1
+      name: Steel Tortoise_1
       rect:
         serializedVersion: 2
         x: 256
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ba8c578c3228054e9bd14555c40a5a9
-      internalID: -2048482958
+      spriteID: 6a24a0712c1190e44b861e87e19a18c8
+      internalID: 1695140214
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Basic Tortoise_2
+      name: Steel Tortoise_2
       rect:
         serializedVersion: 2
         x: 512
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 624db74bd568b3e4db8d2625ca005988
-      internalID: -1027067250
+      spriteID: 4390f10a25d31f346867f79b6140b400
+      internalID: -112295026
       vertices: []
       indices: 
       edges: []
@@ -196,9 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Basic Tortoise_0: -1361055201
-      Basic Tortoise_1: -2048482958
-      Basic Tortoise_2: -1027067250
+      Steel Tortoise_0: -103498279
+      Steel Tortoise_1: 1695140214
+      Steel Tortoise_2: -112295026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
