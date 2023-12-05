@@ -28,10 +28,10 @@ public class BaseEnemy : MonoBehaviour
 	[SerializeField,Range(0.0f,20.0f), Tooltip("Movement speed of the enemy in units per second.")]
 	private float moveSpeed = 10.0f;
 
-	[SerializeField,Range(10.0f,100.0f),Tooltip("Health of the Enemy Unit")]
+	[SerializeField,Range(1.0f,100.0f),Tooltip("Health of the Enemy Unit")]
 	private float health = 10.0f;
 
-	[SerializeField, Range(10.0f, 50.0f), Tooltip("Height and Width of the Enemy Unit")]
+	[SerializeField, Range(1.0f, 50.0f), Tooltip("Height and Width of the Enemy Unit")]
 	private float footprint = 10.0f;
 
 	[Header("Events")]

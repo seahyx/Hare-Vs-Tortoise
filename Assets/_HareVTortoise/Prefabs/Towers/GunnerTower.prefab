@@ -57,8 +57,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: cddef3fb73acbbf4a9f8024715ee9473, type: 3}
     - target: {fileID: 8712162673216785241, guid: 46461704f5f84684087eb6153e593a88, type: 3}
-      propertyPath: FireRate
+      propertyPath: Range
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712162673216785241, guid: 46461704f5f84684087eb6153e593a88, type: 3}
+      propertyPath: Damage
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712162673216785241, guid: 46461704f5f84684087eb6153e593a88, type: 3}
+      propertyPath: FireRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712162673216785241, guid: 46461704f5f84684087eb6153e593a88, type: 3}
+      propertyPath: ProjectileSpeed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

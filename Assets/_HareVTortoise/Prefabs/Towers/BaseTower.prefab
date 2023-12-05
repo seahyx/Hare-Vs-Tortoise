@@ -227,11 +227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af7733d28f8edc40968ea9f4953b6c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 4
+  Damage: 3
   Pierce: 1
-  FireRate: 1
-  Range: 75
-  ProjectileSpeed: 100
+  FireRate: 1.3
+  Range: 90
+  ProjectileSpeed: 50
   Footprint: 20
   PlaceableSurfaces: 2
   BulletPrefab: {fileID: 6414985595747935551, guid: 8af3431b4a078f246a4c4b6907778fdf, type: 3}
