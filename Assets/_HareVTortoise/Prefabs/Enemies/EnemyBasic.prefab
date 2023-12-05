@@ -28,7 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6395319436543106869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -146,6 +146,9 @@ MonoBehaviour:
   OnDestroyedEvent:
     m_PersistentCalls:
       m_Calls: []
+  onHealTrigger: heal
+  onDamageTrigger: Damaged
+  onDestroyTrigger: Destroyed
   position:
     x: 0
     y: 0

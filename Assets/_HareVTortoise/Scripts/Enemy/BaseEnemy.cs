@@ -45,11 +45,22 @@ public class BaseEnemy : MonoBehaviour
 	[SerializeField, Tooltip("Invoked when this enemy is destroyed. Passes itself and death reason as parameters.")]
 	public UnityEvent<BaseEnemy, DeathReason> OnDestroyedEvent = new UnityEvent<BaseEnemy, DeathReason>();
 
-	#endregion
+	[Header("Animation Triggers")]
 
-	#region Member Declarations
+	[SerializeField, Tooltip("Animation trigger on heal.")]
+	private string onHealTrigger = "heal";
 
-	public float MoveSpeed
+    [SerializeField, Tooltip("Animation trigger on damage.")]
+    private string onDamageTrigger = "damage";
+
+    [SerializeField, Tooltip("Animation trigger on destroy.")]
+    private string onDestroyTrigger = "destroy";
+
+    #endregion
+
+    #region Member Declarations
+
+    public float MoveSpeed
 	{
 		get { return moveSpeed; }
 		set { moveSpeed = value; }
@@ -74,11 +85,18 @@ public class BaseEnemy : MonoBehaviour
 	[SerializeField, ReadOnly, Foldout("Debug")]
 	protected float3 upVector;
 
-	#endregion
+	protected Animator animator;
 
-	#region Monobehaviour
+    #endregion
 
-	protected void Update()
+    #region Monobehaviour
+
+    protected void Awake()
+    {
+		TryGetComponent(out animator);
+    }
+
+    protected void Update()
 	{
 		// Get current position, facing rotation, and up vector (comes with the package)
 		EnemyPath.Evaluate(Progress, out position, out tangent, out upVector);
@@ -107,6 +125,7 @@ public class BaseEnemy : MonoBehaviour
 	public void Heal(float heal)
 	{
 		Health += heal;
+        animator?.SetTrigger(onHealTrigger);
 		OnHealEvent.Invoke(this, heal);
 	}
 
@@ -116,25 +135,31 @@ public class BaseEnemy : MonoBehaviour
 		if (Health <= 0)
 		{
 			DestroyWithReason(DeathReason.KilledByRabbit);
-		}
-		OnDamageEvent.Invoke(this, damage);
-	}
+            
+        }
+        animator?.SetTrigger(onDamageTrigger);
+        OnDamageEvent.Invoke(this, damage);
+    }
+    public void DestroyWithReason(DeathReason reason)
+    {
+		animator?.SetTrigger(onDestroyTrigger);
+        OnDestroyedEvent.Invoke(this, reason);
+    }
 
-	#endregion
+	public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
 
-	#region Helper Functions
+    #endregion
 
-	public static BaseEnemy Spawn(BaseEnemy enemyPrefab, Vector2 position, Quaternion rotation, SplineContainer enemyPath)
+    #region Helper Functions
+
+    public static BaseEnemy Spawn(BaseEnemy enemyPrefab, Vector2 position, Quaternion rotation, SplineContainer enemyPath)
 	{
 		BaseEnemy enemy = Instantiate(enemyPrefab, position, rotation);
 		enemy.EnemyPath = enemyPath;
 		return enemy;
-	}
-
-	public void DestroyWithReason(DeathReason reason)
-	{
-		OnDestroyedEvent.Invoke(this, reason);
-		Destroy(gameObject);
 	}
 
 	#endregion
