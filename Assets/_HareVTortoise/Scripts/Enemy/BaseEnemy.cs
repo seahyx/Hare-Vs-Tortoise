@@ -78,6 +78,8 @@ public class BaseEnemy : MonoBehaviour
 		set { footprint = value; }
 	}
 
+	public bool IsDead { get; protected set; } = false;
+
 	[SerializeField, ReadOnly, Foldout("Debug")]
 	protected float3 position;
 	[SerializeField, ReadOnly, Foldout("Debug")]
@@ -98,6 +100,12 @@ public class BaseEnemy : MonoBehaviour
 
     protected void Update()
 	{
+		// Debug
+		Debug.DrawRay(transform.position, tangent, Color.red);
+
+		// Dead tortoises don't move
+		if (IsDead) return;
+
 		// Get current position, facing rotation, and up vector (comes with the package)
 		EnemyPath.Evaluate(Progress, out position, out tangent, out upVector);
 		tangent = Vector3.Normalize(tangent);
@@ -113,9 +121,6 @@ public class BaseEnemy : MonoBehaviour
 			// Kill thyself once reach end!!!
 			DestroyWithReason(DeathReason.ReachGoal);
 		}
-
-		// Debug
-		Debug.DrawRay(transform.position, tangent, Color.red);
 	}
 
 	#endregion
@@ -142,6 +147,12 @@ public class BaseEnemy : MonoBehaviour
     }
     public void DestroyWithReason(DeathReason reason)
     {
+		if (IsDead)
+		{
+			Debug.Log($"DestroyWithReason is called on {name}, which is already dead.");
+			return;
+		}
+		IsDead = true;
 		animator?.SetTrigger(onDestroyTrigger);
         OnDestroyedEvent.Invoke(this, reason);
     }

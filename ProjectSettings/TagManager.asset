@@ -61,3 +61,6 @@ TagManager:
   - name: Card
     uniqueID: 4039283015
     locked: 0
+  - name: Black Bars (PUT ABOVE ALL LAYERS)
+    uniqueID: 1722425583
+    locked: 0
