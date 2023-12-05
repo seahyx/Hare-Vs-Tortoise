@@ -530,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 444.67
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.y
@@ -570,7 +570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 123.8
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -626,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 2922053684340256758, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: _text
       value: Strategically place these tower cards along race path to fend off relentless
-        waves of Tortoise.
+        waves of Tortoises.
       objectReference: {fileID: 0}
     - target: {fileID: 2922053684340256758, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: _fontSize
@@ -671,7 +671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 409.75
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.y
@@ -711,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 42.3
+      value: 13.500002
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2444,7 +2444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2922053684340256758, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: _text
-      value: Hare tower cards will arrive via a conveyor-belt on the right
+      value: Hare tower cards will arrive via a conveyor-belt on the right.
       objectReference: {fileID: 0}
     - target: {fileID: 2922053684340256758, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: _fontSize
@@ -2488,7 +2488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 481.18
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2528,7 +2528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 83.8
+      value: 55.000008
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2626,7 +2626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 483.67
+      value: 509
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2666,7 +2666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -35.8
+      value: -55
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2753,7 +2753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2972440667564043604, guid: 5c92d733c33b56d47838b0beca251cc8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 733.09
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2972440667564043604, guid: 5c92d733c33b56d47838b0beca251cc8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2793,7 +2793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2972440667564043604, guid: 5c92d733c33b56d47838b0beca251cc8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 164
+      value: 149
       objectReference: {fileID: 0}
     - target: {fileID: 2972440667564043604, guid: 5c92d733c33b56d47838b0beca251cc8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3047,7 +3047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4858674381833347451, guid: 74d6c001dea5ccf4daf4d74cd97276c5, type: 3}
       propertyPath: m_SizeDelta.y
