@@ -2,7 +2,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(EnemyManager))]
+[RequireComponent(typeof(EnemyManager), typeof(GameLevelManager))]
 public class WaveManager : MonoBehaviour, IPausable
 {
 	#region Serializable
@@ -20,6 +20,9 @@ public class WaveManager : MonoBehaviour, IPausable
 
 	[SerializeField, Tooltip("Invoked when the current wave changes. Passes the current wave number and total waves, respectively.")]
 	public UnityEvent<int, int> OnCurrentWaveChanged = new UnityEvent<int, int>();
+
+	[SerializeField, Tooltip("Invoked when all the waves have concluded.")]
+	public UnityEvent OnAllWavesEnded = new UnityEvent();
 
 	#endregion
 
@@ -42,6 +45,8 @@ public class WaveManager : MonoBehaviour, IPausable
 
 	public int TotalWaves => WaveBP?.CountTotalWaves() ?? 0;
 
+	private GameLevelManager gameLevelManager;
+
 	[HideInInspector]
 	public EnemyManager EnemyManager;
 
@@ -54,6 +59,7 @@ public class WaveManager : MonoBehaviour, IPausable
 
 	private void Awake()
 	{
+		gameLevelManager = GetComponent<GameLevelManager>();
 		EnemyManager = GetComponent<EnemyManager>();
 		CardManager = GetComponent<CardManager>();
 	}
@@ -69,12 +75,18 @@ public class WaveManager : MonoBehaviour, IPausable
 	[Button]
 	public void StartWave()
 	{
-		StartCoroutine(WaveBP.Execute(this));
+		StartCoroutine(WaveBP.Execute(this, true));
 	}
 
 	[Button]
 	public void EndWaves()
 	{
 		StopAllCoroutines();
+	}
+
+	public void AllWavesEnded()
+	{
+		OnAllWavesEnded.Invoke();
+		gameLevelManager.AllWavesEnded();
 	}
 }

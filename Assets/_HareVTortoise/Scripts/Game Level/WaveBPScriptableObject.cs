@@ -16,7 +16,7 @@ public class WaveBPScriptableObject : ScriptableObject, ISerializationCallbackRe
 
 	#endregion
 
-	public IEnumerator Execute(WaveManager waveManager)
+	public IEnumerator Execute(WaveManager waveManager, bool isRootCoroutine = false)
 	{
 		int currentWaveItemIdx = 0;
 		while (currentWaveItemIdx < WaveSequence.Count)
@@ -24,6 +24,8 @@ public class WaveBPScriptableObject : ScriptableObject, ISerializationCallbackRe
 			yield return waveManager.StartCoroutine(WaveSequence[currentWaveItemIdx].Execute(waveManager));
 			currentWaveItemIdx++;
 		}
+
+		if (isRootCoroutine) waveManager.AllWavesEnded();
 	}
 
 	public void OnAfterDeserialize() { }

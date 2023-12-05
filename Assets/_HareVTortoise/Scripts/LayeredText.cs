@@ -32,7 +32,7 @@ public class LayeredText : MonoBehaviour
 
 	#region Monobehaviour
 
-	private void Start()
+	private void OnEnable()
 	{
 		UpdateText();
 	}

@@ -15,6 +15,15 @@ public class GameLevelManager : MonoBehaviour, IPausable
 		End
 	}
 
+	public class WinData
+	{
+		public int lives;
+		public WinData(int lives)
+		{
+			this.lives = lives;
+		}
+	}
+
 	#endregion
 
 	#region Serializables
@@ -40,6 +49,12 @@ public class GameLevelManager : MonoBehaviour, IPausable
 	[Tooltip("Whether the game is paused.")]
 	private bool isPaused = false;
 
+	[Tooltip("Whether the player has lost the game.")]
+	public bool hasLost = false;
+
+	[Tooltip("Whetehr the player has won the game.")]
+	public bool hasWon = false;
+
 	[Header("Events")]
 
 	[SerializeField, Tooltip("Invoked when the lives value changes.")]
@@ -51,6 +66,12 @@ public class GameLevelManager : MonoBehaviour, IPausable
 	[SerializeField, Tooltip("Invoked when the game is paused/unpaused.")]
 	public UnityEvent<bool> OnPauseStateChanged = new UnityEvent<bool>();
 
+	[SerializeField, Tooltip("Invoked when the player loses.")]
+	public UnityEvent OnLose = new UnityEvent();
+
+	[SerializeField, Tooltip("Invoked when the player has won the game.")]
+	public UnityEvent<WinData> OnWin = new UnityEvent<WinData>();
+
 	#endregion
 
 	#region Member Declarations
@@ -61,6 +82,7 @@ public class GameLevelManager : MonoBehaviour, IPausable
 		set {
 			lives = value;
 			OnLivesChanged.Invoke(value);
+			if (lives <= 0) AllLivesLost();
 		}
 	}
 	public float WarmUpTimer { get { return warmUpTimer; } private set { warmUpTimer = value; } }
@@ -97,7 +119,27 @@ public class GameLevelManager : MonoBehaviour, IPausable
 
 	#region Helper Functions
 
+	private void AllLivesLost()
+	{
+		// Only lose if the player has not already won.
+		if (!hasWon)
+		{
+			hasLost = true;
+			currentGameState = GameState.End;
+			OnLose.Invoke();
+		}
+	}
 
+	public void AllWavesEnded()
+	{
+		// Only win if the player has not already lost.
+		if (!hasLost)
+		{
+			hasWon = true;
+			currentGameState = GameState.End;
+			OnWin.Invoke(new WinData(Lives));
+		}
+	}
 
 	#endregion
 }
