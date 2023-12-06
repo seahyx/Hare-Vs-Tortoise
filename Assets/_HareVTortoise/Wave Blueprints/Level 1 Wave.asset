@@ -14,27 +14,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Description: 
   WaveSequence:
-  - name: 'Spawn card: Basic Soldier - pre: 0s/pos: 0'
+  - name: 'Spawn card: Basic Soldier - pre: 0s/pos: 1'
     Type: 3
     PreDelay: 0
-    PostDelay: 5
+    PostDelay: 0
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 8
-    SpawnDelay: 1
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
     CardPreDelay: 0
-    CardPostDelay: 0
+    CardPostDelay: 1
     CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
-    WaveEndDelay: 0
+    WaveEndDelay: 1
     IsEndlessWave: 0
-  - name: 'Spawn 3 x EnemyBasic - pre: 0s/pos: 0s/spw: 3s'
-    Type: 0
+  - name: 'Spawn card: Basic Soldier - pre: 1s/pos: 0'
+    Type: 3
     PreDelay: 0
     PostDelay: 0
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 3
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 1
+    CardPostDelay: 0
+    CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 5 x EnemyBasic - pre: 2s/pos: 0s/spw: 3s'
+    Type: 0
+    PreDelay: 2
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 5
     SpawnDelay: 3
     DoNotWaitForSpawn: 0
     Delay: 0
@@ -44,7 +59,7 @@ MonoBehaviour:
     CardData: {fileID: 0}
     WaveEndDelay: 0
     IsEndlessWave: 0
-  - name: 'End of wave 1 - delay: 2s'
+  - name: 'End of wave 1 - delay: 1s'
     Type: 4
     PreDelay: 0
     PostDelay: 5
@@ -57,7 +72,37 @@ MonoBehaviour:
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 0}
-    WaveEndDelay: 2
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 8 x EnemyBasic - pre: 2s/pos: 0s/spw: 1.4s'
+    Type: 0
+    PreDelay: 2
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 8
+    SpawnDelay: 1.4
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'End of wave 2 - delay: 1s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
     IsEndlessWave: 0
   - name: 'Spawn card: Gunner Soldier - pre: 0s/pos: 0'
     Type: 3
@@ -74,9 +119,69 @@ MonoBehaviour:
     CardData: {fileID: 11400000, guid: 7f56eb95ca1c1534c9282cdd535db772, type: 2}
     WaveEndDelay: 0
     IsEndlessWave: 0
-  - name: 'Spawn 5 x EnemyTank - pre: 0s/pos: 0s/spw: 2s'
+  - name: 'Spawn 10 x EnemyBasic - pre: 1s/pos: 0s/spw: 2s/No Wait'
+    Type: 0
+    PreDelay: 1
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 10
+    SpawnDelay: 2
+    DoNotWaitForSpawn: 1
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 5 x EnemyTank - pre: 8s/pos: 0s/spw: 2.5s'
+    Type: 0
+    PreDelay: 8
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
+    NumberOfEnemies: 5
+    SpawnDelay: 2.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'End of wave 3 - delay: 1s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 5
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 8
+    SpawnDelay: 1
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 8 x EnemyBasic - pre: 0s/pos: 1.2s/spw: 1.5s'
     Type: 0
     PreDelay: 0
+    PostDelay: 1.2
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 8
+    SpawnDelay: 1.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'Spawn 5 x EnemyTank - pre: 2s/pos: 0s/spw: 2s'
+    Type: 0
+    PreDelay: 2
     PostDelay: 0
     EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
     NumberOfEnemies: 5
@@ -89,7 +194,7 @@ MonoBehaviour:
     CardData: {fileID: 0}
     WaveEndDelay: 0
     IsEndlessWave: 0
-  - name: 'End of wave 2 - delay: 2s'
+  - name: 'End of wave 4 - delay: 1s'
     Type: 4
     PreDelay: 0
     PostDelay: 5
@@ -102,60 +207,30 @@ MonoBehaviour:
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 0}
-    WaveEndDelay: 2
+    WaveEndDelay: 1
     IsEndlessWave: 0
-  - name: 'Spawn 3 x EnemyBasic - pre: 0s/pos: 1.2s/spw: 1s'
-    Type: 0
-    PreDelay: 0
-    PostDelay: 1.2
-    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 3
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 0
-    Delay: 0
-    WaveBP: {fileID: 0}
-    CardPreDelay: 0
-    CardPostDelay: 0
-    CardData: {fileID: 0}
-    WaveEndDelay: 0
-    IsEndlessWave: 0
-  - name: 'Spawn 3 x EnemyTank - pre: 0s/pos: 0s/spw: 1s'
-    Type: 0
+  - name: 'Spawn card: Basic Soldier - pre: 0s/pos: 0'
+    Type: 3
     PreDelay: 0
     PostDelay: 0
-    EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
-    NumberOfEnemies: 3
-    SpawnDelay: 1
-    DoNotWaitForSpawn: 0
-    Delay: 0
-    WaveBP: {fileID: 0}
-    CardPreDelay: 0
-    CardPostDelay: 0
-    CardData: {fileID: 0}
-    WaveEndDelay: 0
-    IsEndlessWave: 0
-  - name: 'End of wave 3 - delay: 3s'
-    Type: 4
-    PreDelay: 0
-    PostDelay: 5
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 8
-    SpawnDelay: 1
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
     CardPreDelay: 0
     CardPostDelay: 0
-    CardData: {fileID: 0}
-    WaveEndDelay: 3
+    CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
+    WaveEndDelay: 1
     IsEndlessWave: 0
-  - name: 'Spawn 4 x EnemyTank - pre: 0s/pos: 0.75s/spw: 1.1s/No Wait'
+  - name: 'Spawn 4 x EnemyTank - pre: 0s/pos: 2s/spw: 2s/No Wait'
     Type: 0
     PreDelay: 0
-    PostDelay: 0.75
+    PostDelay: 2
     EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
     NumberOfEnemies: 4
-    SpawnDelay: 1.1
+    SpawnDelay: 2
     DoNotWaitForSpawn: 1
     Delay: 0
     WaveBP: {fileID: 0}
@@ -164,13 +239,13 @@ MonoBehaviour:
     CardData: {fileID: 0}
     WaveEndDelay: 5
     IsEndlessWave: 0
-  - name: 'Spawn 4 x EnemyBasic - pre: 0s/pos: 1s/spw: 1.2s'
+  - name: 'Spawn 8 x EnemyBasic - pre: 0s/pos: 1s/spw: 1.5s'
     Type: 0
     PreDelay: 0
     PostDelay: 1
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 4
-    SpawnDelay: 1.2
+    NumberOfEnemies: 8
+    SpawnDelay: 1.5
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
@@ -178,6 +253,21 @@ MonoBehaviour:
     CardPostDelay: 0
     CardData: {fileID: 0}
     WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'End of wave 5 - delay: 1s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
     IsEndlessWave: 0
   - name: 'Spawn card: Sniper Soldier - pre: 3s/pos: 0'
     Type: 3
@@ -194,22 +284,52 @@ MonoBehaviour:
     CardData: {fileID: 11400000, guid: 666cd18f953e66d4fbfa2b35a21e5594, type: 2}
     WaveEndDelay: 0
     IsEndlessWave: 0
-  - name: 'Spawn 4 x EnemyBasic - pre: 0s/pos: 0s/spw: 0.2s'
+  - name: 'Spawn 20 x EnemyBasic - pre: 0s/pos: 0s/spw: 3s/No Wait'
     Type: 0
     PreDelay: 0
     PostDelay: 0
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 4
-    SpawnDelay: 0.2
+    NumberOfEnemies: 20
+    SpawnDelay: 3
+    DoNotWaitForSpawn: 1
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn card: Basic Soldier - pre: 2s/pos: 0'
+    Type: 3
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
+    NumberOfEnemies: 5
+    SpawnDelay: 2
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 2
+    CardPostDelay: 0
+    CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'Spawn 20 x EnemyTank - pre: 0s/pos: 0s/spw: 2s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
+    NumberOfEnemies: 20
+    SpawnDelay: 2
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 0}
-    WaveEndDelay: 5
+    WaveEndDelay: 1
     IsEndlessWave: 0
-  - name: 'End of wave 4 - delay: 3s'
+  - name: 'End of wave 6 - delay: 1s'
     Type: 4
     PreDelay: 0
     PostDelay: 0
@@ -222,10 +342,10 @@ MonoBehaviour:
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 0}
-    WaveEndDelay: 3
+    WaveEndDelay: 1
     IsEndlessWave: 0
-  - name: 'Spawn 18 x EnemyBasic - pre: 0s/pos: 0s/spw: 0.5s'
-    Type: 0
+  - name: 'Spawn card: Gunner Soldier - pre: 0s/pos: 0'
+    Type: 3
     PreDelay: 0
     PostDelay: 0
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
@@ -236,23 +356,68 @@ MonoBehaviour:
     WaveBP: {fileID: 0}
     CardPreDelay: 0
     CardPostDelay: 0
-    CardData: {fileID: 0}
+    CardData: {fileID: 11400000, guid: 7f56eb95ca1c1534c9282cdd535db772, type: 2}
     WaveEndDelay: 5
     IsEndlessWave: 0
-  - name: 'Spawn card: Basic Soldier - pre: 2s/pos: 0'
-    Type: 3
-    PreDelay: 0
-    PostDelay: 5
+  - name: 'Spawn 20 x EnemyBasic - pre: 2s/pos: 0s/spw: 0.3s'
+    Type: 0
+    PreDelay: 2
+    PostDelay: 0
     EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
-    NumberOfEnemies: 8
-    SpawnDelay: 1
+    NumberOfEnemies: 20
+    SpawnDelay: 0.3
     DoNotWaitForSpawn: 0
     Delay: 0
     WaveBP: {fileID: 0}
-    CardPreDelay: 2
+    CardPreDelay: 0
     CardPostDelay: 0
-    CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
-    WaveEndDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'Spawn 25 x EnemyBasic - pre: 10s/pos: 0s/spw: 0.3s'
+    Type: 0
+    PreDelay: 10
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 25
+    SpawnDelay: 0.3
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 30 x EnemyBasic - pre: 10s/pos: 0s/spw: 0.3s'
+    Type: 0
+    PreDelay: 10
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 30
+    SpawnDelay: 0.3
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'End of wave 7 - delay: 1s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
     IsEndlessWave: 0
   - name: 'Spawn card: Basic Soldier - pre: 1s/pos: 0'
     Type: 3
@@ -269,7 +434,37 @@ MonoBehaviour:
     CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
     WaveEndDelay: 0
     IsEndlessWave: 0
-  - name: 'End of wave 5 - delay: 3s'
+  - name: 'Spawn 20 x EnemyBasic - pre: 0s/pos: 0s/spw: 1s/No Wait'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 20
+    SpawnDelay: 1
+    DoNotWaitForSpawn: 1
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 15 x EnemyTank - pre: 5s/pos: 0s/spw: 1.5s'
+    Type: 0
+    PreDelay: 5
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
+    NumberOfEnemies: 15
+    SpawnDelay: 1.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 1
+    CardPostDelay: 0
+    CardData: {fileID: 11400000, guid: f9b58de0e49db5048b3f75119cb49b7e, type: 2}
+    WaveEndDelay: 0
+    IsEndlessWave: 0
+  - name: 'End of wave 8 - delay: 1s'
     Type: 4
     PreDelay: 0
     PostDelay: 0
@@ -282,5 +477,140 @@ MonoBehaviour:
     CardPreDelay: 0
     CardPostDelay: 0
     CardData: {fileID: 0}
-    WaveEndDelay: 3
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn card: Gunner Soldier - pre: 0s/pos: 0'
+    Type: 3
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 18
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 11400000, guid: 7f56eb95ca1c1534c9282cdd535db772, type: 2}
+    WaveEndDelay: 5
+    IsEndlessWave: 0
+  - name: 'Spawn 75 x EnemyBasic - pre: 0s/pos: 0s/spw: 0.2s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 75
+    SpawnDelay: 0.2
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'End of wave 9 - delay: 1s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn card: Sniper Soldier - pre: 0s/pos: 0'
+    Type: 3
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 11400000, guid: 666cd18f953e66d4fbfa2b35a21e5594, type: 2}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 30 x EnemyTank - pre: 0s/pos: 5s/spw: 0.4s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 5
+    EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
+    NumberOfEnemies: 30
+    SpawnDelay: 0.4
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn card: Sniper Soldier - pre: 0s/pos: 5'
+    Type: 3
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 5
+    CardData: {fileID: 11400000, guid: 666cd18f953e66d4fbfa2b35a21e5594, type: 2}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 40 x EnemyTank - pre: 0s/pos: 10s/spw: 0.4s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 10
+    EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
+    NumberOfEnemies: 40
+    SpawnDelay: 0.4
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'Spawn 50 x EnemyTank - pre: 0s/pos: 0s/spw: 0.4s'
+    Type: 0
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9123436872346715495, guid: 30d1b53b49ca02a47b8a27b69c3c3627, type: 3}
+    NumberOfEnemies: 50
+    SpawnDelay: 0.4
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
+    IsEndlessWave: 0
+  - name: 'End of wave 10 - delay: 1s'
+    Type: 4
+    PreDelay: 0
+    PostDelay: 0
+    EnemyPrefab: {fileID: 9153280730264138471, guid: 13cbd91b3732d7f4dbb966c4ce8a6be4, type: 3}
+    NumberOfEnemies: 16
+    SpawnDelay: 0.5
+    DoNotWaitForSpawn: 0
+    Delay: 0
+    WaveBP: {fileID: 0}
+    CardPreDelay: 0
+    CardPostDelay: 0
+    CardData: {fileID: 0}
+    WaveEndDelay: 1
     IsEndlessWave: 0
