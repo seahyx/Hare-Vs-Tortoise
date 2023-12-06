@@ -90,7 +90,7 @@ public class WaveBPItem : ISerializationCallbackReceiver
 	[AllowNesting]
 	public WaveBPScriptableObject WaveBP;
 
-	#endregion
+    #endregion
 
 	#region Type = SpawnCard
 
@@ -132,9 +132,30 @@ public class WaveBPItem : ISerializationCallbackReceiver
 
 	#endregion
 
-	#region ISerializationCallbackReceiver
+    [SerializeField, Tooltip("Delay before spawning the card in seconds.")]
+    [MinValue(0)]
+    [ShowIf("Type", ItemType.SpawnCard)]
+    [AllowNesting]
+    public float CardPreDelay = 0.0f;
 
-	public void OnBeforeSerialize()
+    [SerializeField, Tooltip("Delay after spawning the card in seconds.")]
+    [ShowIf("Type", ItemType.SpawnCard)]
+    [AllowNesting]
+    public float CardPostDelay = 0.0f;
+
+    [SerializeField, Tooltip("Card prefab to spawn.")]
+    [ShowIf("Type", ItemType.SpawnCard)]
+    [AllowNesting]
+    public TowerCard CardPrefab;
+
+
+    #endregion
+
+    #endregion
+
+    #region ISerializationCallbackReceiver
+
+    public void OnBeforeSerialize()
 	{
 		switch (Type)
 		{
