@@ -1,6 +1,5 @@
 using NaughtyAttributes;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
@@ -131,27 +130,6 @@ public class WaveBPItem : ISerializationCallbackReceiver
 	public int currentWaveNumber { get; set; } = 0;
 
 	#endregion
-
-    [SerializeField, Tooltip("Delay before spawning the card in seconds.")]
-    [MinValue(0)]
-    [ShowIf("Type", ItemType.SpawnCard)]
-    [AllowNesting]
-    public float CardPreDelay = 0.0f;
-
-    [SerializeField, Tooltip("Delay after spawning the card in seconds.")]
-    [ShowIf("Type", ItemType.SpawnCard)]
-    [AllowNesting]
-    public float CardPostDelay = 0.0f;
-
-    [SerializeField, Tooltip("Card prefab to spawn.")]
-    [ShowIf("Type", ItemType.SpawnCard)]
-    [AllowNesting]
-    public TowerCard CardPrefab;
-
-
-    #endregion
-
-    #endregion
 
     #region ISerializationCallbackReceiver
 
