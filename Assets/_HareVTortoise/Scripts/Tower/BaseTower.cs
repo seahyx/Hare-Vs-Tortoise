@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class BaseTower : MonoBehaviour
 {
 	public const float PIXELS_PER_UNIT = 100.0f;
@@ -41,6 +42,9 @@ public class BaseTower : MonoBehaviour
 	[SerializeField]
 	public TowerRangeTriggerHandler RangeTriggerHandler;
 
+	[SerializeField]
+	public AudioClip onShootAudio;
+
 	[Header("Others")]
 
 	[SerializeField, Tooltip("Detected enemies in range.")]
@@ -61,6 +65,8 @@ public class BaseTower : MonoBehaviour
 	/// </summary>
 	public float RangeUnityUnit => Range / PIXELS_PER_UNIT;
 
+	private AudioSource audioSource { get; set; }
+
 	#endregion
 
 	#region Monobehaviour
@@ -68,6 +74,7 @@ public class BaseTower : MonoBehaviour
 	protected void Awake()
 	{
 		RangeTriggerHandler.tower = this;
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	protected void Update()
@@ -121,6 +128,8 @@ public class BaseTower : MonoBehaviour
 		bullet.Speed = speed;
 		bullet.Damage = damage;
 		bullet.Range = range;
+
+		audioSource.PlayOneShot(onShootAudio);
 	}
 
 	public void OnEnemyEnterRange(Collider2D other)
