@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Sniper Soldier
   m_EditorClassIdentifier: 
   CardName: Sniper Soldier
-  Description: 'High Damage '
+  Description: High damage and range, but takes time to aim.
   Cost: 1
   CardSprite: {fileID: 21300000, guid: 72b274dd71a832d4fbbc6004145f0eff, type: 3}
+  CardBannerSprite: {fileID: 21300000, guid: 10de0d12ecc4c244db7f53f6d81ccd06, type: 3}
   Banner: {fileID: 1076353193383435656, guid: b4dd0786ae5d0974e9977994ba1bf2da, type: 3}
   Card: {fileID: 6445106418983297135, guid: eca1d7fe4cc98454b9675f1e147c8782, type: 3}
   Tower: {fileID: 3690877348851073497, guid: 929a9180a4102844d9dad186af621556, type: 3}

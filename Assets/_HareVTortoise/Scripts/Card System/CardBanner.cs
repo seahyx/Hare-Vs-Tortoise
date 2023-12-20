@@ -2,8 +2,9 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(EventTrigger))]
+[RequireComponent(typeof(EventTrigger), typeof(Image))]
 public class CardBanner : MonoBehaviour
 {
 	#region Serializables
@@ -40,12 +41,17 @@ public class CardBanner : MonoBehaviour
 	/// </summary>
 	public CardManager CardManager;
 
+	public Image Image { get; private set; }
+
 	#endregion
 
 	#region Monobehaviour
 
 	private void Start()
 	{
+		Image = GetComponent<Image>();
+		Image.sprite = CardData.CardBannerSprite;
+
 		trigger = GetComponent<EventTrigger>();
 		EventTrigger.Entry clickEntry = new EventTrigger.Entry();
 		clickEntry.eventID = EventTriggerType.PointerClick;

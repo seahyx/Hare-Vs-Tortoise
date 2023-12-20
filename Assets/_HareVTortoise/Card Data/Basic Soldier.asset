@@ -16,6 +16,7 @@ MonoBehaviour:
   Description: Young, hopeful upstart. Elated to be finally deployed into the field.
   Cost: 1
   CardSprite: {fileID: 21300000, guid: 225348e8b79a2ff449abf89676776a49, type: 3}
+  CardBannerSprite: {fileID: 21300000, guid: 03e76ab39b7a315428c641d8096de9d7, type: 3}
   Banner: {fileID: 1076353193383435656, guid: b4dd0786ae5d0974e9977994ba1bf2da, type: 3}
   Card: {fileID: 6445106418983297135, guid: eca1d7fe4cc98454b9675f1e147c8782, type: 3}
   Tower: {fileID: 8712162673216785241, guid: 46461704f5f84684087eb6153e593a88, type: 3}

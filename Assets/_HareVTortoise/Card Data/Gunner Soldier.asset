@@ -16,6 +16,7 @@ MonoBehaviour:
   Description: grrr-ta-ta-ta
   Cost: 1
   CardSprite: {fileID: 21300000, guid: 9cee162518c305f438fb33bcdd124077, type: 3}
+  CardBannerSprite: {fileID: 21300000, guid: 0975647df1d75ef44adb64212c2d765d, type: 3}
   Banner: {fileID: 1076353193383435656, guid: b4dd0786ae5d0974e9977994ba1bf2da, type: 3}
   Card: {fileID: 6445106418983297135, guid: eca1d7fe4cc98454b9675f1e147c8782, type: 3}
   Tower: {fileID: 7500485703376066277, guid: beec603acfc347b4bbb35097f36f7dff, type: 3}

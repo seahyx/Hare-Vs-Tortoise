@@ -17,6 +17,10 @@ public class CardDataScriptableObject : ScriptableObject
 	[AllowNesting, ShowAssetPreview]
 	public Sprite CardSprite;
 
+	[SerializeField]
+	[AllowNesting, ShowAssetPreview]
+	public Sprite CardBannerSprite;
+
 	[SerializeField, Tooltip("Associated card banner prefab.")]
 	public CardBanner Banner;
 

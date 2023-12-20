@@ -52,11 +52,11 @@ TagManager:
   - name: Towers
     uniqueID: 3368042183
     locked: 0
-  - name: UI
-    uniqueID: 928771167
-    locked: 0
   - name: Bullet
     uniqueID: 1786918419
+    locked: 0
+  - name: UI
+    uniqueID: 928771167
     locked: 0
   - name: Card
     uniqueID: 4039283015
